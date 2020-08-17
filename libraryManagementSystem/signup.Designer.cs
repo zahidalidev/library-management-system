@@ -58,6 +58,7 @@
             this.Controls.Add(this.label1);
             this.Name = "signup";
             this.Size = new System.Drawing.Size(1343, 894);
+            this.Load += new System.EventHandler(this.signup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
