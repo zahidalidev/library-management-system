@@ -107,5 +107,15 @@ namespace libraryManagementSystem
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void userLogin1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

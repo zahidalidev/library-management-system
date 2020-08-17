@@ -16,4 +16,3 @@ D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.book
 D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.manageUser.resources
 D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.publisherManage.resources
 D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.signup.resources
-D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.csprojAssemblyReference.cache

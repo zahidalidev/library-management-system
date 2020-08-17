@@ -29,22 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.sideHome = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.userLogin1 = new libraryManagementSystem.userLogin();
             this.adminLogin1 = new libraryManagementSystem.adminLogin();
             this.manageUser1 = new libraryManagementSystem.manageUser();
             this.bookIssue1 = new libraryManagementSystem.bookIssue();
@@ -52,7 +53,6 @@
             this.publisherManage1 = new libraryManagementSystem.publisherManage();
             this.authorManage1 = new libraryManagementSystem.authorManage();
             this.signup1 = new libraryManagementSystem.signup();
-            this.userLogin1 = new libraryManagementSystem.userLogin();
             this.viewBooks1 = new libraryManagementSystem.viewBooks();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
@@ -77,8 +77,49 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 906);
+            this.panel1.Size = new System.Drawing.Size(228, 1832);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button16
+            // 
+            this.button16.FlatAppearance.BorderSize = 0;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button16.Location = new System.Drawing.Point(12, 840);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(217, 66);
+            this.button16.TabIndex = 11;
+            this.button16.Text = "Admin Login";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button8
+            // 
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Location = new System.Drawing.Point(12, 122);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(217, 66);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "vew Books";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            // 
+            // button15
+            // 
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button15.Location = new System.Drawing.Point(12, 717);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(217, 66);
+            this.button15.TabIndex = 10;
+            this.button15.Text = "Manage Users";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // sideHome
             // 
@@ -87,6 +128,84 @@
             this.sideHome.Name = "sideHome";
             this.sideHome.Size = new System.Drawing.Size(14, 66);
             this.sideHome.TabIndex = 2;
+            // 
+            // button14
+            // 
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button14.Location = new System.Drawing.Point(12, 632);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(217, 66);
+            this.button14.TabIndex = 9;
+            this.button14.Text = "Book Issue";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button13
+            // 
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button13.Location = new System.Drawing.Point(12, 547);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(217, 66);
+            this.button13.TabIndex = 8;
+            this.button13.Text = "Books";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button12
+            // 
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button12.Location = new System.Drawing.Point(12, 462);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(217, 66);
+            this.button12.TabIndex = 7;
+            this.button12.Text = "Publisher Manage";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button11
+            // 
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button11.Location = new System.Drawing.Point(12, 377);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(216, 66);
+            this.button11.TabIndex = 6;
+            this.button11.Text = "Auther Manage";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button10
+            // 
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button10.Location = new System.Drawing.Point(12, 292);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(217, 66);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Sign Up";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(12, 207);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(217, 66);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "User Login";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel5
             // 
@@ -139,123 +258,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "View Books";
             // 
-            // button2
+            // userLogin1
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 207);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 66);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "User Login";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(12, 122);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(217, 66);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "vew Books";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
-            // 
-            // button10
-            // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button10.Location = new System.Drawing.Point(12, 292);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(217, 66);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Sign Up";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button11
-            // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button11.Location = new System.Drawing.Point(12, 377);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(216, 66);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "Auther Manage";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button12
-            // 
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button12.Location = new System.Drawing.Point(12, 462);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(217, 66);
-            this.button12.TabIndex = 7;
-            this.button12.Text = "Publisher Manage";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button13
-            // 
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button13.Location = new System.Drawing.Point(12, 547);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(217, 66);
-            this.button13.TabIndex = 8;
-            this.button13.Text = "Books";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button14
-            // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button14.Location = new System.Drawing.Point(12, 632);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(217, 66);
-            this.button14.TabIndex = 9;
-            this.button14.Text = "Book Issue";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button15
-            // 
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button15.Location = new System.Drawing.Point(12, 717);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(217, 66);
-            this.button15.TabIndex = 10;
-            this.button15.Text = "Manage Users";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button16
-            // 
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button16.Location = new System.Drawing.Point(12, 840);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(217, 66);
-            this.button16.TabIndex = 11;
-            this.button16.Text = "Admin Login";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.userLogin1.Location = new System.Drawing.Point(227, -13);
+            this.userLogin1.Name = "userLogin1";
+            this.userLogin1.Size = new System.Drawing.Size(1467, 894);
+            this.userLogin1.TabIndex = 12;
+            this.userLogin1.Load += new System.EventHandler(this.userLogin1_Load);
             // 
             // adminLogin1
             // 
@@ -307,13 +316,6 @@
             this.signup1.Size = new System.Drawing.Size(1343, 894);
             this.signup1.TabIndex = 5;
             // 
-            // userLogin1
-            // 
-            this.userLogin1.Location = new System.Drawing.Point(228, 16);
-            this.userLogin1.Name = "userLogin1";
-            this.userLogin1.Size = new System.Drawing.Size(1343, 894);
-            this.userLogin1.TabIndex = 4;
-            // 
             // viewBooks1
             // 
             this.viewBooks1.Location = new System.Drawing.Point(228, 16);
@@ -325,8 +327,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoScrollMargin = new System.Drawing.Size(0, 900);
+            this.AutoScrollMinSize = new System.Drawing.Size(0, 900);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1570, 906);
+            this.ClientSize = new System.Drawing.Size(1565, 900);
+            this.Controls.Add(this.userLogin1);
             this.Controls.Add(this.adminLogin1);
             this.Controls.Add(this.manageUser1);
             this.Controls.Add(this.bookIssue1);
@@ -334,13 +340,14 @@
             this.Controls.Add(this.publisherManage1);
             this.Controls.Add(this.authorManage1);
             this.Controls.Add(this.signup1);
-            this.Controls.Add(this.userLogin1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.viewBooks1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1565, 900);
+            this.MinimumSize = new System.Drawing.Size(1565, 900);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -365,7 +372,6 @@
         private System.IO.FileSystemWatcher fileSystemWatcher2;
         private viewBooks viewBooks1;
         private System.Windows.Forms.Label label2;
-        private userLogin userLogin1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button12;
@@ -382,6 +388,7 @@
         private bookIssue bookIssue1;
         private manageUser manageUser1;
         private adminLogin adminLogin1;
+        private userLogin userLogin1;
     }
 }
 
