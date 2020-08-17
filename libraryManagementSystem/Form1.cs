@@ -53,5 +53,59 @@ namespace libraryManagementSystem
             sideHome.Top = button8.Top;
             viewBooks1.BringToFront();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            sideHome.Height = button10.Height;
+            sideHome.Top = button10.Top;
+            signup1.BringToFront();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            sideHome.Height = button15.Height;
+            sideHome.Top = button15.Top;
+            manageUser1.BringToFront();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            sideHome.Height = button11.Height;
+            sideHome.Top = button11.Top;
+            authorManage1.BringToFront();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            sideHome.Height = button12.Height;
+            sideHome.Top = button12.Top;
+            publisherManage1.BringToFront();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            sideHome.Height = button13.Height;
+            sideHome.Top = button13.Top;
+            books1.BringToFront();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            sideHome.Height = button14.Height;
+            sideHome.Top = button14.Top;
+            bookIssue1.BringToFront();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            sideHome.Height = button16.Height;
+            sideHome.Top = button16.Top;
+            adminLogin1.BringToFront();
+        }
+
+        private void adminLogin1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

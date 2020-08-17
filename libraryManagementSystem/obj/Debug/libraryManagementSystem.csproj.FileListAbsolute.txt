@@ -9,3 +9,11 @@ D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.exe
 D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.pdb
 D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.userLogin.resources
 D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.viewBooks.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.adminLogin.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.authorManage.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.bookIssue.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.books.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.manageUser.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.publisherManage.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.signup.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.csprojAssemblyReference.cache
