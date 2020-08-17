@@ -136,6 +136,7 @@
             this.loginButton.TabIndex = 12;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // userLogin
             // 
@@ -151,6 +152,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "userLogin";
             this.Size = new System.Drawing.Size(1467, 894);
+            this.Load += new System.EventHandler(this.userLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
