@@ -1,0 +1,11 @@
+D:\DB Lab Project\libraryManagementSystem\bin\Debug\libraryManagementSystem.exe.config
+D:\DB Lab Project\libraryManagementSystem\bin\Debug\libraryManagementSystem.exe
+D:\DB Lab Project\libraryManagementSystem\bin\Debug\libraryManagementSystem.pdb
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.Form1.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.Properties.Resources.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.csproj.GenerateResource.cache
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.csproj.CoreCompileInputs.cache
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.exe
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.pdb
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.userLogin.resources
+D:\DB Lab Project\libraryManagementSystem\obj\Debug\libraryManagementSystem.viewBooks.resources
