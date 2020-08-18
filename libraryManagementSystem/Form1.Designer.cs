@@ -45,15 +45,15 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.label2 = new System.Windows.Forms.Label();
-            this.userLogin1 = new libraryManagementSystem.userLogin();
             this.adminLogin1 = new libraryManagementSystem.adminLogin();
             this.manageUser1 = new libraryManagementSystem.manageUser();
             this.bookIssue1 = new libraryManagementSystem.bookIssue();
             this.books1 = new libraryManagementSystem.books();
             this.publisherManage1 = new libraryManagementSystem.publisherManage();
             this.authorManage1 = new libraryManagementSystem.authorManage();
-            this.signup1 = new libraryManagementSystem.signup();
             this.viewBooks1 = new libraryManagementSystem.viewBooks();
+            this.userLogin1 = new libraryManagementSystem.userLogin();
+            this.signup1 = new libraryManagementSystem.signup();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -77,7 +77,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 1832);
+            this.panel1.Size = new System.Drawing.Size(228, 2995);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -258,14 +258,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "View Books";
             // 
-            // userLogin1
-            // 
-            this.userLogin1.Location = new System.Drawing.Point(227, -13);
-            this.userLogin1.Name = "userLogin1";
-            this.userLogin1.Size = new System.Drawing.Size(1467, 894);
-            this.userLogin1.TabIndex = 12;
-            this.userLogin1.Load += new System.EventHandler(this.userLogin1_Load);
-            // 
             // adminLogin1
             // 
             this.adminLogin1.Location = new System.Drawing.Point(228, 14);
@@ -309,19 +301,26 @@
             this.authorManage1.Size = new System.Drawing.Size(1343, 894);
             this.authorManage1.TabIndex = 6;
             // 
-            // signup1
-            // 
-            this.signup1.Location = new System.Drawing.Point(228, 38);
-            this.signup1.Name = "signup1";
-            this.signup1.Size = new System.Drawing.Size(1343, 894);
-            this.signup1.TabIndex = 5;
-            // 
             // viewBooks1
             // 
             this.viewBooks1.Location = new System.Drawing.Point(228, 16);
             this.viewBooks1.Name = "viewBooks1";
             this.viewBooks1.Size = new System.Drawing.Size(1343, 894);
             this.viewBooks1.TabIndex = 2;
+            // 
+            // userLogin1
+            // 
+            this.userLogin1.Location = new System.Drawing.Point(218, 0);
+            this.userLogin1.Name = "userLogin1";
+            this.userLogin1.Size = new System.Drawing.Size(1500, 2095);
+            this.userLogin1.TabIndex = 12;
+            // 
+            // signup1
+            // 
+            this.signup1.Location = new System.Drawing.Point(218, 0);
+            this.signup1.Name = "signup1";
+            this.signup1.Size = new System.Drawing.Size(1500, 2095);
+            this.signup1.TabIndex = 13;
             // 
             // Form1
             // 
@@ -331,7 +330,8 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 900);
             this.AutoScrollMinSize = new System.Drawing.Size(0, 900);
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1565, 900);
+            this.ClientSize = new System.Drawing.Size(1665, 1000);
+            this.Controls.Add(this.signup1);
             this.Controls.Add(this.userLogin1);
             this.Controls.Add(this.adminLogin1);
             this.Controls.Add(this.manageUser1);
@@ -339,15 +339,14 @@
             this.Controls.Add(this.books1);
             this.Controls.Add(this.publisherManage1);
             this.Controls.Add(this.authorManage1);
-            this.Controls.Add(this.signup1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.viewBooks1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1565, 900);
-            this.MinimumSize = new System.Drawing.Size(1565, 900);
+            this.MaximumSize = new System.Drawing.Size(1765, 1000);
+            this.MinimumSize = new System.Drawing.Size(1665, 1000);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -381,7 +380,6 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
-        private signup signup1;
         private authorManage authorManage1;
         private publisherManage publisherManage1;
         private books books1;
@@ -389,6 +387,7 @@
         private manageUser manageUser1;
         private adminLogin adminLogin1;
         private userLogin userLogin1;
+        private signup signup1;
     }
 }
 

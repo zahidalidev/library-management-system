@@ -13,5 +13,15 @@ namespace libraryManagementSystem
         {
 
         }
+
+        private void label3_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
