@@ -40,7 +40,8 @@ namespace libraryManagementSystem
                 string email = textBox2.Text;
                 string password = textBox1.Text;
 
-                SqlCommand cmd = new SqlCommand("select * from member where email = '"+ email.Trim() +"' and password = '"+ password.Trim() +"'", con);
+                SqlCommand cmd = new SqlCommand("select * from member where email = '"+ email.Trim() +"' and " +
+                                                 "password = '"+ password.Trim() +"'", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
