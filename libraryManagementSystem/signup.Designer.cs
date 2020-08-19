@@ -96,6 +96,7 @@
             this.loginButton.TabIndex = 20;
             this.loginButton.Text = "Sign Up";
             this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // lableStreet
             // 

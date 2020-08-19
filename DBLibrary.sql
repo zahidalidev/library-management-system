@@ -1,13 +1,12 @@
-USE DBLibrary
-GO
-EXEC sp_changedbowner 'sa'
-
 -- ----------------------------------------------------------------------------
 -- DATABASE DBLibrary
 -- ----------------------------------------------------------------------------
 CREATE DATABASE DBLibrary;
 
-use DBLibrary
+USE DBLibrary
+GO
+EXEC sp_changedbowner 'sa'
+
 -- ----------------------------------------------------------------------------
 -- Table admin
 -- ----------------------------------------------------------------------------
@@ -55,6 +54,7 @@ CREATE TABLE book (
   PRIMARY KEY (bookID),
 )
 
+
 -- ----------------------------------------------------------------------------
 -- Table member
 -- ----------------------------------------------------------------------------
@@ -64,12 +64,22 @@ CREATE TABLE member (
   fullname VARCHAR(45) NOT NULL,
   mobileNumber VARCHAR(45) NOT NULL,
   email VARCHAR(45) NOT NULL,
+  IDCardNumber VARCHAR(45) NOT NULL,
+  PRIMARY KEY (memberID),
+)
+
+-- ----------------------------------------------------------------------------
+-- Table memberAddress
+-- ----------------------------------------------------------------------------
+CREATE TABLE memberAddress (
+  memberID INT NOT NULL,
   streetAddress VARCHAR(45) NOT NULL,
   city VARCHAR(45) NOT NULL,
   state VARCHAR(45) NOT NULL,
-  IDCardNumber VARCHAR(45) NOT NULL,
-  PRIMARY KEY (memberID)
+  PRIMARY KEY (memberID),
+  FOREIGN KEY (memberID) REFERENCES member(memberID) ON DELETE CASCADE
 )
+
 
 -- ----------------------------------------------------------------------------
 -- Table memberbookissue
