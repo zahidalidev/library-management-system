@@ -9,7 +9,9 @@ namespace libraryManagementSystem
     public partial class signup : UserControl
     {
         //connection string from app.config
-        string strCon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+        //string strCon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+        SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DBLibrary;Integrated Security=True");
+
         public signup()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace libraryManagementSystem
         private void loginButton_Click(object sender, System.EventArgs e)
         {
             //openning connection
-            SqlConnection con = new SqlConnection(strCon);
+            //SqlConnection con = new SqlConnection(strCon);
             con.Open();
 
             try
@@ -90,6 +92,9 @@ namespace libraryManagementSystem
 
                     //close connection
                     con.Close();
+
+                    MessageBox.Show("Sign Up Successfull", "Hi " + fullname,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
