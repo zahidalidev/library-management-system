@@ -36,8 +36,12 @@ namespace libraryManagementSystem
             try
             {
                 //SqlConnection con = new SqlConnection(strCon);
-                //opening connection
-                con.Open();
+
+                //opening connection if it is close
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
 
                 //values from the input feilds
                 string email = textBox2.Text;

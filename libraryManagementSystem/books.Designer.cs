@@ -28,44 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(books));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.bGetDetail = new System.Windows.Forms.Button();
-            this.bDescription = new System.Windows.Forms.Label();
-            this.upState = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.upEmail = new System.Windows.Forms.TextBox();
-            this.upCnic = new System.Windows.Forms.TextBox();
-            this.upStreet = new System.Windows.Forms.TextBox();
+            this.bDescriptionad = new System.Windows.Forms.Label();
+            this.bPrice = new System.Windows.Forms.TextBox();
+            this.bGenre = new System.Windows.Forms.TextBox();
+            this.bTitle = new System.Windows.Forms.TextBox();
+            this.bDescription = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bPublisher = new System.Windows.Forms.Label();
-            this.bPrice = new System.Windows.Forms.Label();
+            this.bPriceasa = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bStock = new System.Windows.Forms.Label();
-            this.bGenre = new System.Windows.Forms.Label();
-            this.bTitle = new System.Windows.Forms.Label();
+            this.bStockansba = new System.Windows.Forms.Label();
+            this.bGenreajsh = new System.Windows.Forms.Label();
+            this.bTitlejah = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.bEdition = new System.Windows.Forms.Label();
-            this.bAuthor = new System.Windows.Forms.Label();
+            this.bEditionajs = new System.Windows.Forms.Label();
+            this.bAuthorasjha = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.bEdition = new System.Windows.Forms.TextBox();
             this.updateBook = new System.Windows.Forms.Button();
             this.deleteBook = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.dBLibraryDataSet = new libraryManagementSystem.DBLibraryDataSet();
+            this.autherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autherTableAdapter = new libraryManagementSystem.DBLibraryDataSetTableAdapters.autherTableAdapter();
+            this.dBLibraryDataSet1 = new libraryManagementSystem.DBLibraryDataSet1();
+            this.autherBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.autherTableAdapter1 = new libraryManagementSystem.DBLibraryDataSet1TableAdapters.autherTableAdapter();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dBLibraryDataSet2 = new libraryManagementSystem.DBLibraryDataSet2();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.bStock1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,9 +87,9 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(-7, -15);
+            this.panel1.Location = new System.Drawing.Point(-67, -15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1515, 142);
+            this.panel1.Size = new System.Drawing.Size(1616, 142);
             this.panel1.TabIndex = 27;
             // 
             // label3
@@ -85,7 +99,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 25F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(648, 45);
+            this.label3.Location = new System.Drawing.Point(655, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 63);
             this.label3.TabIndex = 1;
@@ -106,76 +120,57 @@
             this.bGetDetail.UseVisualStyleBackColor = false;
             this.bGetDetail.Click += new System.EventHandler(this.addBook_Click);
             // 
+            // bDescriptionad
+            // 
+            this.bDescriptionad.AutoSize = true;
+            this.bDescriptionad.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.bDescriptionad.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bDescriptionad.Location = new System.Drawing.Point(145, 726);
+            this.bDescriptionad.Name = "bDescriptionad";
+            this.bDescriptionad.Size = new System.Drawing.Size(141, 33);
+            this.bDescriptionad.TabIndex = 44;
+            this.bDescriptionad.Text = "Description";
+            // 
+            // bPrice
+            // 
+            this.bPrice.BackColor = System.Drawing.SystemColors.Control;
+            this.bPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bPrice.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPrice.Location = new System.Drawing.Point(573, 453);
+            this.bPrice.Name = "bPrice";
+            this.bPrice.Size = new System.Drawing.Size(329, 27);
+            this.bPrice.TabIndex = 42;
+            // 
+            // bGenre
+            // 
+            this.bGenre.BackColor = System.Drawing.SystemColors.Control;
+            this.bGenre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bGenre.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bGenre.Location = new System.Drawing.Point(161, 453);
+            this.bGenre.Name = "bGenre";
+            this.bGenre.Size = new System.Drawing.Size(332, 27);
+            this.bGenre.TabIndex = 38;
+            // 
+            // bTitle
+            // 
+            this.bTitle.BackColor = System.Drawing.SystemColors.Control;
+            this.bTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bTitle.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTitle.Location = new System.Drawing.Point(1010, 280);
+            this.bTitle.Name = "bTitle";
+            this.bTitle.Size = new System.Drawing.Size(343, 27);
+            this.bTitle.TabIndex = 41;
+            this.bTitle.TextChanged += new System.EventHandler(this.upEmail_TextChanged);
+            // 
             // bDescription
             // 
-            this.bDescription.AutoSize = true;
-            this.bDescription.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
-            this.bDescription.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bDescription.Location = new System.Drawing.Point(145, 726);
+            this.bDescription.BackColor = System.Drawing.SystemColors.Control;
+            this.bDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bDescription.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDescription.Location = new System.Drawing.Point(151, 774);
             this.bDescription.Name = "bDescription";
-            this.bDescription.Size = new System.Drawing.Size(141, 33);
-            this.bDescription.TabIndex = 44;
-            this.bDescription.Text = "Description";
-            // 
-            // upState
-            // 
-            this.upState.BackColor = System.Drawing.SystemColors.Control;
-            this.upState.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.upState.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upState.Location = new System.Drawing.Point(1010, 597);
-            this.upState.Name = "upState";
-            this.upState.Size = new System.Drawing.Size(329, 27);
-            this.upState.TabIndex = 40;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(573, 453);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(329, 27);
-            this.textBox4.TabIndex = 42;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(161, 453);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(332, 27);
-            this.textBox2.TabIndex = 38;
-            // 
-            // upEmail
-            // 
-            this.upEmail.BackColor = System.Drawing.SystemColors.Control;
-            this.upEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.upEmail.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upEmail.Location = new System.Drawing.Point(1010, 280);
-            this.upEmail.Name = "upEmail";
-            this.upEmail.Size = new System.Drawing.Size(343, 27);
-            this.upEmail.TabIndex = 41;
-            // 
-            // upCnic
-            // 
-            this.upCnic.BackColor = System.Drawing.SystemColors.Control;
-            this.upCnic.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.upCnic.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upCnic.Location = new System.Drawing.Point(1010, 453);
-            this.upCnic.Name = "upCnic";
-            this.upCnic.Size = new System.Drawing.Size(329, 27);
-            this.upCnic.TabIndex = 39;
-            // 
-            // upStreet
-            // 
-            this.upStreet.BackColor = System.Drawing.SystemColors.Control;
-            this.upStreet.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.upStreet.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upStreet.Location = new System.Drawing.Point(151, 774);
-            this.upStreet.Name = "upStreet";
-            this.upStreet.Size = new System.Drawing.Size(1208, 27);
-            this.upStreet.TabIndex = 36;
+            this.bDescription.Size = new System.Drawing.Size(1208, 27);
+            this.bDescription.TabIndex = 36;
             // 
             // panel9
             // 
@@ -224,20 +219,20 @@
             this.bPublisher.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.bPublisher.Location = new System.Drawing.Point(1004, 550);
             this.bPublisher.Name = "bPublisher";
-            this.bPublisher.Size = new System.Drawing.Size(120, 33);
+            this.bPublisher.Size = new System.Drawing.Size(196, 33);
             this.bPublisher.TabIndex = 25;
-            this.bPublisher.Text = "Publisher";
+            this.bPublisher.Text = "Select Publisher";
             // 
-            // bPrice
+            // bPriceasa
             // 
-            this.bPrice.AutoSize = true;
-            this.bPrice.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
-            this.bPrice.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bPrice.Location = new System.Drawing.Point(567, 406);
-            this.bPrice.Name = "bPrice";
-            this.bPrice.Size = new System.Drawing.Size(72, 33);
-            this.bPrice.TabIndex = 24;
-            this.bPrice.Text = "Price";
+            this.bPriceasa.AutoSize = true;
+            this.bPriceasa.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.bPriceasa.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bPriceasa.Location = new System.Drawing.Point(567, 406);
+            this.bPriceasa.Name = "bPriceasa";
+            this.bPriceasa.Size = new System.Drawing.Size(72, 33);
+            this.bPriceasa.TabIndex = 24;
+            this.bPriceasa.Text = "Price";
             // 
             // panel2
             // 
@@ -247,38 +242,38 @@
             this.panel2.Size = new System.Drawing.Size(343, 1);
             this.panel2.TabIndex = 29;
             // 
-            // bStock
+            // bStockansba
             // 
-            this.bStock.AutoSize = true;
-            this.bStock.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
-            this.bStock.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bStock.Location = new System.Drawing.Point(1004, 406);
-            this.bStock.Name = "bStock";
-            this.bStock.Size = new System.Drawing.Size(78, 33);
-            this.bStock.TabIndex = 23;
-            this.bStock.Text = "Stock";
+            this.bStockansba.AutoSize = true;
+            this.bStockansba.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.bStockansba.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bStockansba.Location = new System.Drawing.Point(1004, 406);
+            this.bStockansba.Name = "bStockansba";
+            this.bStockansba.Size = new System.Drawing.Size(78, 33);
+            this.bStockansba.TabIndex = 23;
+            this.bStockansba.Text = "Stock";
             // 
-            // bGenre
+            // bGenreajsh
             // 
-            this.bGenre.AutoSize = true;
-            this.bGenre.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
-            this.bGenre.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bGenre.Location = new System.Drawing.Point(155, 406);
-            this.bGenre.Name = "bGenre";
-            this.bGenre.Size = new System.Drawing.Size(83, 33);
-            this.bGenre.TabIndex = 22;
-            this.bGenre.Text = "Genre";
+            this.bGenreajsh.AutoSize = true;
+            this.bGenreajsh.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.bGenreajsh.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bGenreajsh.Location = new System.Drawing.Point(155, 406);
+            this.bGenreajsh.Name = "bGenreajsh";
+            this.bGenreajsh.Size = new System.Drawing.Size(83, 33);
+            this.bGenreajsh.TabIndex = 22;
+            this.bGenreajsh.Text = "Genre";
             // 
-            // bTitle
+            // bTitlejah
             // 
-            this.bTitle.AutoSize = true;
-            this.bTitle.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
-            this.bTitle.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bTitle.Location = new System.Drawing.Point(1004, 235);
-            this.bTitle.Name = "bTitle";
-            this.bTitle.Size = new System.Drawing.Size(62, 33);
-            this.bTitle.TabIndex = 21;
-            this.bTitle.Text = "Title";
+            this.bTitlejah.AutoSize = true;
+            this.bTitlejah.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.bTitlejah.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bTitlejah.Location = new System.Drawing.Point(1004, 235);
+            this.bTitlejah.Name = "bTitlejah";
+            this.bTitlejah.Size = new System.Drawing.Size(62, 33);
+            this.bTitlejah.TabIndex = 21;
+            this.bTitlejah.Text = "Title";
             // 
             // pictureBox1
             // 
@@ -303,27 +298,27 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // bEdition
+            // bEditionajs
             // 
-            this.bEdition.AutoSize = true;
-            this.bEdition.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
-            this.bEdition.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bEdition.Location = new System.Drawing.Point(155, 550);
-            this.bEdition.Name = "bEdition";
-            this.bEdition.Size = new System.Drawing.Size(91, 33);
-            this.bEdition.TabIndex = 22;
-            this.bEdition.Text = "Edition";
+            this.bEditionajs.AutoSize = true;
+            this.bEditionajs.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.bEditionajs.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bEditionajs.Location = new System.Drawing.Point(155, 550);
+            this.bEditionajs.Name = "bEditionajs";
+            this.bEditionajs.Size = new System.Drawing.Size(91, 33);
+            this.bEditionajs.TabIndex = 22;
+            this.bEditionajs.Text = "Edition";
             // 
-            // bAuthor
+            // bAuthorasjha
             // 
-            this.bAuthor.AutoSize = true;
-            this.bAuthor.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
-            this.bAuthor.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bAuthor.Location = new System.Drawing.Point(567, 550);
-            this.bAuthor.Name = "bAuthor";
-            this.bAuthor.Size = new System.Drawing.Size(90, 33);
-            this.bAuthor.TabIndex = 24;
-            this.bAuthor.Text = "Author";
+            this.bAuthorasjha.AutoSize = true;
+            this.bAuthorasjha.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.bAuthorasjha.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bAuthorasjha.Location = new System.Drawing.Point(567, 550);
+            this.bAuthorasjha.Name = "bAuthorasjha";
+            this.bAuthorasjha.Size = new System.Drawing.Size(166, 33);
+            this.bAuthorasjha.TabIndex = 24;
+            this.bAuthorasjha.Text = "Select Author";
             // 
             // panel10
             // 
@@ -341,25 +336,15 @@
             this.panel11.Size = new System.Drawing.Size(350, 1);
             this.panel11.TabIndex = 32;
             // 
-            // textBox1
+            // bEdition
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(161, 597);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(332, 27);
-            this.textBox1.TabIndex = 38;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(573, 597);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(329, 27);
-            this.textBox3.TabIndex = 42;
+            this.bEdition.BackColor = System.Drawing.SystemColors.Control;
+            this.bEdition.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bEdition.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEdition.Location = new System.Drawing.Point(161, 597);
+            this.bEdition.Name = "bEdition";
+            this.bEdition.Size = new System.Drawing.Size(332, 27);
+            this.bEdition.TabIndex = 38;
             // 
             // updateBook
             // 
@@ -435,10 +420,80 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.updateBook_Click);
             // 
+            // dBLibraryDataSet
+            // 
+            this.dBLibraryDataSet.DataSetName = "DBLibraryDataSet";
+            this.dBLibraryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // autherBindingSource
+            // 
+            this.autherBindingSource.DataMember = "auther";
+            this.autherBindingSource.DataSource = this.dBLibraryDataSet;
+            // 
+            // autherTableAdapter
+            // 
+            this.autherTableAdapter.ClearBeforeFill = true;
+            // 
+            // dBLibraryDataSet1
+            // 
+            this.dBLibraryDataSet1.DataSetName = "DBLibraryDataSet1";
+            this.dBLibraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // autherBindingSource1
+            // 
+            this.autherBindingSource1.DataMember = "auther";
+            this.autherBindingSource1.DataSource = this.dBLibraryDataSet1;
+            // 
+            // autherTableAdapter1
+            // 
+            this.autherTableAdapter1.ClearBeforeFill = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AllowDrop = true;
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.autherBindingSource1, "authorID", true));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(574, 593);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(347, 28);
+            this.comboBox1.TabIndex = 49;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // dBLibraryDataSet2
+            // 
+            this.dBLibraryDataSet2.DataSetName = "DBLibraryDataSet2";
+            this.dBLibraryDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AllowDrop = true;
+            this.comboBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(1010, 594);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(349, 28);
+            this.comboBox2.TabIndex = 49;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // bStock1
+            // 
+            this.bStock1.BackColor = System.Drawing.SystemColors.Control;
+            this.bStock1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bStock1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bStock1.Location = new System.Drawing.Point(1010, 452);
+            this.bStock1.Name = "bStock1";
+            this.bStock1.Size = new System.Drawing.Size(329, 27);
+            this.bStock1.TabIndex = 42;
+            // 
             // books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -446,16 +501,14 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.updateBook);
             this.Controls.Add(this.bGetDetail);
-            this.Controls.Add(this.bDescription);
-            this.Controls.Add(this.upState);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.bDescriptionad);
+            this.Controls.Add(this.bEdition);
+            this.Controls.Add(this.bStock1);
+            this.Controls.Add(this.bPrice);
+            this.Controls.Add(this.bGenre);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.upEmail);
-            this.Controls.Add(this.upCnic);
-            this.Controls.Add(this.upStreet);
+            this.Controls.Add(this.bTitle);
+            this.Controls.Add(this.bDescription);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
@@ -463,22 +516,27 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.bAuthor);
+            this.Controls.Add(this.bAuthorasjha);
             this.Controls.Add(this.bPublisher);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.bPrice);
+            this.Controls.Add(this.bPriceasa);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.bEdition);
-            this.Controls.Add(this.bStock);
+            this.Controls.Add(this.bEditionajs);
+            this.Controls.Add(this.bStockansba);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bGenre);
-            this.Controls.Add(this.bTitle);
+            this.Controls.Add(this.bGenreajsh);
+            this.Controls.Add(this.bTitlejah);
             this.Name = "books";
-            this.Size = new System.Drawing.Size(1500, 2095);
+            this.Size = new System.Drawing.Size(1528, 2095);
             this.Load += new System.EventHandler(this.books_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,37 +547,45 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button bGetDetail;
-        private System.Windows.Forms.Label bDescription;
-        private System.Windows.Forms.TextBox upState;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox upEmail;
-        private System.Windows.Forms.TextBox upCnic;
-        private System.Windows.Forms.TextBox upStreet;
+        private System.Windows.Forms.Label bDescriptionad;
+        private System.Windows.Forms.TextBox bPrice;
+        private System.Windows.Forms.TextBox bTitle;
+        private System.Windows.Forms.TextBox bDescription;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label bPublisher;
-        private System.Windows.Forms.Label bPrice;
+        private System.Windows.Forms.Label bPriceasa;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label bStock;
-        private System.Windows.Forms.Label bGenre;
-        private System.Windows.Forms.Label bTitle;
+        private System.Windows.Forms.Label bStockansba;
+        private System.Windows.Forms.Label bGenreajsh;
+        private System.Windows.Forms.Label bTitlejah;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label bEdition;
-        private System.Windows.Forms.Label bAuthor;
+        private System.Windows.Forms.Label bEditionajs;
+        private System.Windows.Forms.Label bAuthorasjha;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox bEdition;
         private System.Windows.Forms.Button updateBook;
         private System.Windows.Forms.Button deleteBook;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox bGenre;
+        private System.Windows.Forms.BindingSource autherBindingSource;
+        private DBLibraryDataSet dBLibraryDataSet;
+        private DBLibraryDataSetTableAdapters.autherTableAdapter autherTableAdapter;
+        private System.Windows.Forms.BindingSource autherBindingSource1;
+        private DBLibraryDataSet1 dBLibraryDataSet1;
+        private DBLibraryDataSet1TableAdapters.autherTableAdapter autherTableAdapter1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private DBLibraryDataSet2 dBLibraryDataSet2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox bStock1;
     }
 }

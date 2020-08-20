@@ -71,6 +71,21 @@
     <Compile Include="books.Designer.cs">
       <DependentUpon>books.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBLibraryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBLibraryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBLibraryDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBLibraryDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBLibraryDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBLibraryDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +163,39 @@
     <EmbeddedResource Include="viewBooks.resx">
       <DependentUpon>viewBooks.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DBLibraryDataSet.xsc">
+      <DependentUpon>DBLibraryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBLibraryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBLibraryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBLibraryDataSet.xss">
+      <DependentUpon>DBLibraryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBLibraryDataSet1.xsc">
+      <DependentUpon>DBLibraryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBLibraryDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBLibraryDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBLibraryDataSet1.xss">
+      <DependentUpon>DBLibraryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBLibraryDataSet2.xsc">
+      <DependentUpon>DBLibraryDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBLibraryDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBLibraryDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBLibraryDataSet2.xss">
+      <DependentUpon>DBLibraryDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

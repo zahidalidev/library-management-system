@@ -34,9 +34,13 @@ namespace libraryManagementSystem
 
         private void loginButton_Click(object sender, System.EventArgs e)
         {
-            //openning connection
             //SqlConnection con = new SqlConnection(strCon);
-            con.Open();
+            
+            //openning connection if it is close
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
 
             try
             {
