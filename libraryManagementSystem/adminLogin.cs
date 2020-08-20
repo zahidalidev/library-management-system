@@ -96,5 +96,10 @@ namespace libraryManagementSystem
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void adminLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

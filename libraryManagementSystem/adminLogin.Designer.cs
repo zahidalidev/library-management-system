@@ -158,6 +158,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "adminLogin";
             this.Size = new System.Drawing.Size(1500, 2095);
+            this.Load += new System.EventHandler(this.adminLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

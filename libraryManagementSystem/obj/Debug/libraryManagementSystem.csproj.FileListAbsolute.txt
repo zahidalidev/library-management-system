@@ -54,3 +54,4 @@ D:\DB Lab Project\library-management-systems\libraryManagementSystem\obj\Debug\l
 D:\DB Lab Project\library-management-systems\libraryManagementSystem\obj\Debug\libraryManagementSystem.csproj.CoreCompileInputs.cache
 D:\DB Lab Project\library-management-systems\libraryManagementSystem\obj\Debug\libraryManagementSystem.exe
 D:\DB Lab Project\library-management-systems\libraryManagementSystem\obj\Debug\libraryManagementSystem.pdb
+D:\DB Lab Project\library-management-systems\libraryManagementSystem\obj\Debug\libraryManagementSystem.csprojAssemblyReference.cache
