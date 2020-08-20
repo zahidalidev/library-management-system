@@ -166,6 +166,52 @@ namespace libraryManagementSystem
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            //openning connection if it is close
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            // filling auther and publisher comboBoxes
+            try
+            {
+                //enabling comboBoxes
+                comboBox1.Enabled = true;
+                comboBox2.Enabled = true;
+
+                //clearing picture
+                pictureBox1.Image = null;
+
+                //clearing input feilds
+                bTitle.Text = "";
+                bGenre.Text = "";
+                bPrice.Text = "";
+                bEdition.Text = "";
+                bDescription.Text = "";
+                bStock1.Text = "";
+
+                // filing comboBox1 with author 
+                fillAuthorBox();
+
+                //filing comboBox2 with publisher
+                fillPublisherBox();
+
+                //closing connection
+                con.Close();
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Clearing Feilds Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //getting authers name for drop Down
+
+        }
+
         private void deleteBook_Click(object sender, EventArgs e)
         {
 
@@ -253,5 +299,7 @@ namespace libraryManagementSystem
                 throw new Exception("Invalid Publisher name");
             }
         }
+
+        
     }
 }

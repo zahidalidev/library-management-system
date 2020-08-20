@@ -73,6 +73,7 @@
             this.dBLibraryDataSet2 = new libraryManagementSystem.DBLibraryDataSet2();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.bStock1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet)).BeginInit();
@@ -99,11 +100,11 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 25F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(655, 45);
+            this.label3.Location = new System.Drawing.Point(441, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(233, 63);
+            this.label3.Size = new System.Drawing.Size(858, 63);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Add Book";
+            this.label3.Text = "Manage Books (Add, Update or Delete)";
             // 
             // bGetDetail
             // 
@@ -114,7 +115,7 @@
             this.bGetDetail.ForeColor = System.Drawing.SystemColors.Control;
             this.bGetDetail.Location = new System.Drawing.Point(804, 264);
             this.bGetDetail.Name = "bGetDetail";
-            this.bGetDetail.Size = new System.Drawing.Size(123, 48);
+            this.bGetDetail.Size = new System.Drawing.Size(150, 48);
             this.bGetDetail.TabIndex = 46;
             this.bGetDetail.Text = "Get Details";
             this.bGetDetail.UseVisualStyleBackColor = false;
@@ -488,10 +489,25 @@
             this.bStock1.Size = new System.Drawing.Size(329, 27);
             this.bStock1.TabIndex = 42;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(804, 199);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(150, 48);
+            this.button3.TabIndex = 50;
+            this.button3.Text = "Clear Fields";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
@@ -587,5 +603,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox bStock1;
+        private System.Windows.Forms.Button button3;
     }
 }
