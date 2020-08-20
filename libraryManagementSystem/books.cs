@@ -158,7 +158,7 @@ namespace libraryManagementSystem
                 //checking publisher
                 checkPublisher();
 
-                //************************ adding book in the database
+                //---------------------- adding book in the database
 
                 //values from the fields
                 string imagePath = dest;
@@ -221,6 +221,83 @@ namespace libraryManagementSystem
 
         }
 
+        //updating book
+        private void updateBookOriginal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                //cheking book exist or not
+                checkBookExist();
+
+
+                //getting current stock
+                string bookID = textBox5.Text.Trim();
+
+                SqlCommand cuCmd = new SqlCommand("select totalStock, currentStock from book where bookID = @bookID", con);
+                cuCmd.Parameters.AddWithValue("@bookID", bookID);
+
+                SqlDataAdapter cuDa = new SqlDataAdapter(cuCmd);
+                DataTable cuDt = new DataTable();
+                cuDa.Fill(cuDt);
+
+                //---------------------- updating book in the database
+
+                string oldTotalStock = cuDt.Rows[0][0].ToString();
+                string oldCurrentStock = cuDt.Rows[0][1].ToString();
+
+                //values from the fields
+                string imagePath = dest;
+                string bookeTitle = bTitle.Text.Trim();
+                string bookGenre = bGenre.Text.Trim();
+                string bookPrice = bPrice.Text.Trim();
+                string bookEdition = bEdition.Text.Trim();
+                string bookDescription = bDescription.Text.Trim();
+                string bookStock = bStock1.Text.Trim();
+
+                //managing current stock
+                int stockDifference = int.Parse(bookStock) - int.Parse(oldTotalStock);
+                int newCurrentStock = int.Parse(oldCurrentStock) + stockDifference;
+
+                //inserting book data
+                SqlCommand boCmd = new SqlCommand("UPDATE book SET name = @bookeTitle, description = @bookDescription, genre = @bookGenre," +
+                    "edition = @bookEdition, bookImage = @imagePath, price = @bookPrice, totalStock = @bookStock, " +
+                    "currentStock = @newCurrentStock where bookID = @bookID", con);
+
+                boCmd.Parameters.AddWithValue("@bookID", bookID);
+                boCmd.Parameters.AddWithValue("@bookeTitle", bookeTitle);
+                boCmd.Parameters.AddWithValue("@bookDescription", bookDescription);
+                boCmd.Parameters.AddWithValue("@bookGenre", bookGenre);
+                boCmd.Parameters.AddWithValue("@bookEdition", bookEdition);
+                boCmd.Parameters.AddWithValue("@imagePath", imagePath);
+                boCmd.Parameters.AddWithValue("@bookPrice", bookPrice);
+                boCmd.Parameters.AddWithValue("@bookStock", bookStock);
+                boCmd.Parameters.AddWithValue("@newCurrentStock", newCurrentStock);
+
+
+                boCmd.ExecuteNonQuery();
+
+                //clearing fields
+                clearFields();
+
+                //closing connection
+                con.Close();
+
+                //successfull
+                MessageBox.Show("book added successfully", "Successfull",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Updating book Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         //clearing fields
         private void button3_Click(object sender, EventArgs e)
         {
@@ -255,7 +332,25 @@ namespace libraryManagementSystem
 
         }
 
-        //user define functions
+        //----------------------------------------- user define functions
+
+        public void checkBookExist() { 
+            
+            string bookID = textBox5.Text.Trim();
+
+            SqlCommand idCmd = new SqlCommand("select * from book where bookID = @bookID", con);
+            idCmd.Parameters.AddWithValue("@bookID", bookID);
+
+            SqlDataAdapter da = new SqlDataAdapter(idCmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            if(dt.Rows.Count == 0)
+            {
+                throw new Exception("Book with the given ID does not exist");
+            }
+           
+        }
 
         public void clearFields()
         {
@@ -360,6 +455,6 @@ namespace libraryManagementSystem
             }
         }
 
-        
+       
     }
 }

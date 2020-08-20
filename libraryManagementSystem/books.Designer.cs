@@ -56,7 +56,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.bEdition = new System.Windows.Forms.TextBox();
-            this.updateBook = new System.Windows.Forms.Button();
             this.deleteBook = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -74,6 +73,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.bStock1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.updateBookOriginal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet)).BeginInit();
@@ -347,24 +347,9 @@
             this.bEdition.Size = new System.Drawing.Size(332, 27);
             this.bEdition.TabIndex = 38;
             // 
-            // updateBook
-            // 
-            this.updateBook.BackColor = System.Drawing.Color.Crimson;
-            this.updateBook.FlatAppearance.BorderSize = 0;
-            this.updateBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBook.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBook.ForeColor = System.Drawing.SystemColors.Control;
-            this.updateBook.Location = new System.Drawing.Point(691, 865);
-            this.updateBook.Name = "updateBook";
-            this.updateBook.Size = new System.Drawing.Size(159, 50);
-            this.updateBook.TabIndex = 46;
-            this.updateBook.Text = "Update";
-            this.updateBook.UseVisualStyleBackColor = false;
-            this.updateBook.Click += new System.EventHandler(this.updateBook_Click);
-            // 
             // deleteBook
             // 
-            this.deleteBook.BackColor = System.Drawing.Color.Crimson;
+            this.deleteBook.BackColor = System.Drawing.Color.Maroon;
             this.deleteBook.FlatAppearance.BorderSize = 0;
             this.deleteBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBook.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -408,7 +393,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Crimson;
+            this.button2.BackColor = System.Drawing.Color.Green;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -491,22 +476,37 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button3.BackColor = System.Drawing.Color.Maroon;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(804, 199);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 48);
+            this.button3.Size = new System.Drawing.Size(150, 49);
             this.button3.TabIndex = 50;
             this.button3.Text = "Clear Fields";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // updateBookOriginal
+            // 
+            this.updateBookOriginal.BackColor = System.Drawing.Color.Navy;
+            this.updateBookOriginal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBookOriginal.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.updateBookOriginal.ForeColor = System.Drawing.Color.White;
+            this.updateBookOriginal.Location = new System.Drawing.Point(695, 862);
+            this.updateBookOriginal.Name = "updateBookOriginal";
+            this.updateBookOriginal.Size = new System.Drawing.Size(159, 57);
+            this.updateBookOriginal.TabIndex = 51;
+            this.updateBookOriginal.Text = "Update";
+            this.updateBookOriginal.UseVisualStyleBackColor = false;
+            this.updateBookOriginal.Click += new System.EventHandler(this.updateBookOriginal_Click);
+            // 
             // books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.updateBookOriginal);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -515,7 +515,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.deleteBook);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.updateBook);
             this.Controls.Add(this.bGetDetail);
             this.Controls.Add(this.bDescriptionad);
             this.Controls.Add(this.bEdition);
@@ -585,7 +584,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.TextBox bEdition;
-        private System.Windows.Forms.Button updateBook;
         private System.Windows.Forms.Button deleteBook;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
@@ -604,5 +602,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox bStock1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button updateBookOriginal;
     }
 }
