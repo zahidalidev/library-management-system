@@ -33,34 +33,20 @@ namespace libraryManagementSystem
             // filling auther and publisher comboBoxes
             try
             {
-                //getting auther names from database
-                SqlCommand auCmd = new SqlCommand("select fullname from auther", con);
-                SqlDataAdapter auDa = new SqlDataAdapter(auCmd);
-                DataTable auDt = new DataTable();
-                auDa.Fill(auDt);
+                // filing comboBox1 with author 
+                fillAuthorBox();
 
-                //filling comboBox1 with auther names
-                comboBox1.DataSource = auDt;
-                comboBox1.DisplayMember = "fullname";
-
-                //getting Publisher names from database
-                SqlCommand puCmd = new SqlCommand("select fullname from publisher", con);
-                SqlDataAdapter puDa = new SqlDataAdapter(puCmd);
-                DataTable puDt = new DataTable();
-                puDa.Fill(puDt);
-
-                //filling comboBox1 with auther names
-                comboBox2.DataSource = puDt;
-                comboBox2.DisplayMember = "fullname";
+                //filing comboBox2 with publisher
+                fillPublisherBox();
 
                 //closing connection
                 con.Close();
 
             }
-            catch (Exception)
+            catch (Exception error)
             {
-
-                throw;
+                MessageBox.Show(error.Message, "dropDown box error",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //getting authers name for drop Down
 
@@ -113,6 +99,12 @@ namespace libraryManagementSystem
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
+                //if book does not exist try another one
+                if(dt.Rows.Count == 0)
+                {
+                    throw new Exception("Book with the given ID does not Exist try another one");
+                }
+
                 //showing picture
                 pictureBox1.Image = new Bitmap(dt.Rows[0][8].ToString());
 
@@ -132,6 +124,7 @@ namespace libraryManagementSystem
                 comboBox2.DataSource = dt;
                 comboBox2.DisplayMember = "publisherName";
 
+                //disabling comboBoxes
                 comboBox1.Enabled = false;
                 comboBox2.Enabled = false;
 
@@ -147,8 +140,29 @@ namespace libraryManagementSystem
 
         }
 
+        //adding new book
         private void updateBook_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if(con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                //checking author
+                checkAuthor();
+
+                //checking publisher
+                checkPublisher();
+
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Invalid Book details",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
@@ -175,6 +189,69 @@ namespace libraryManagementSystem
         private void bStock_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        //user define functions
+
+
+        public void fillAuthorBox()
+        {
+            //getting auther names from database
+            SqlCommand auCmd = new SqlCommand("select fullname from auther", con);
+            SqlDataAdapter auDa = new SqlDataAdapter(auCmd);
+            DataTable auDt = new DataTable();
+            auDa.Fill(auDt);
+
+            //filling comboBox1 with auther names
+            comboBox1.DataSource = auDt;
+            comboBox1.DisplayMember = "fullname";
+
+        }
+
+        public void fillPublisherBox()
+        {
+            //getting Publisher names from database
+            SqlCommand puCmd = new SqlCommand("select fullname from publisher", con);
+            SqlDataAdapter puDa = new SqlDataAdapter(puCmd);
+            DataTable puDt = new DataTable();
+            puDa.Fill(puDt);
+
+            //filling comboBox2 with publisher names
+            comboBox2.DataSource = puDt;
+            comboBox2.DisplayMember = "fullname";
+        }
+
+        public void checkAuthor()
+        {
+            //getting auther names from database
+            SqlCommand auCmd = new SqlCommand("select fullname from auther where fullname = @fullname", con);
+            auCmd.Parameters.AddWithValue("@fullname", comboBox1.Text.Trim());
+            SqlDataAdapter auDa = new SqlDataAdapter(auCmd);
+            DataTable auDt = new DataTable();
+            auDa.Fill(auDt);
+
+            //throwing exeption if author name does not exist
+            if (auDt.Rows.Count == 0)
+            {
+                throw new Exception("Invalid author name");
+            }
+
+        }
+
+        public void checkPublisher()
+        {
+            //getting Publisher names from database
+            SqlCommand puCmd = new SqlCommand("select fullname from publisher where fullname = @fullname", con);
+            puCmd.Parameters.AddWithValue("@fullname", comboBox2.Text.Trim());
+            SqlDataAdapter puDa = new SqlDataAdapter(puCmd);
+            DataTable puDt = new DataTable();
+            puDa.Fill(puDt);
+
+            //throwing exeption if publisher name does not exist
+            if (puDt.Rows.Count == 0)
+            {
+                throw new Exception("Invalid Publisher name");
+            }
         }
     }
 }
