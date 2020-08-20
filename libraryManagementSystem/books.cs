@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Security.Policy;
 
 namespace libraryManagementSystem
 {
@@ -52,6 +53,7 @@ namespace libraryManagementSystem
 
         }
 
+        //selected book image location
         string dest;
         private void button1_Click(object sender, System.EventArgs e)
         {
@@ -156,7 +158,60 @@ namespace libraryManagementSystem
                 //checking publisher
                 checkPublisher();
 
+                //************************ adding book in the database
 
+                //values from the fields
+                string imagePath = dest;
+                string bookeTitle = bTitle.Text.Trim();
+                string bookGenre = bGenre.Text.Trim();
+                string bookPrice = bPrice.Text.Trim();
+                string bookEdition = bEdition.Text.Trim();
+                string bookDescription = bDescription.Text.Trim();
+                string bookStock = bStock1.Text.Trim();
+
+                string bookAuthor = comboBox1.Text.Trim();
+                string bookPublisher = comboBox2.Text.Trim();
+
+                //getting author ID
+                SqlCommand auCmd = new SqlCommand("select authorID from auther where fullname = @bookAuthor", con);
+                auCmd.Parameters.AddWithValue("@bookAuthor", bookAuthor);
+                SqlDataAdapter auDa = new SqlDataAdapter(auCmd);
+                DataTable auDt = new DataTable();
+                auDa.Fill(auDt);
+                string bookAuthorID = auDt.Rows[0][0].ToString();
+
+                //getting publisherID
+                SqlCommand puCmd = new SqlCommand("select publisherID from publisher where fullname = @bookPublisher", con);
+                puCmd.Parameters.AddWithValue("@bookPublisher", bookPublisher);
+                SqlDataAdapter puDa = new SqlDataAdapter(puCmd);
+                DataTable puDt = new DataTable();
+                puDa.Fill(puDt);
+                string bookPublisherID = puDt.Rows[0][0].ToString();
+
+                //inserting book data
+                SqlCommand boCmd = new SqlCommand("insert into book values(@bookeTitle, @bookDescription, @bookGenre," +
+                    "@bookEdition, @imagePath, @bookPrice, @bookStock, @bookStock, @bookAuthorID, @bookPublisherID)", con);
+                boCmd.Parameters.AddWithValue("@bookeTitle", bookeTitle);
+                boCmd.Parameters.AddWithValue("@bookDescription", bookDescription);
+                boCmd.Parameters.AddWithValue("@bookGenre", bookGenre);
+                boCmd.Parameters.AddWithValue("@bookEdition", bookEdition);
+                boCmd.Parameters.AddWithValue("@imagePath", imagePath);
+                boCmd.Parameters.AddWithValue("@bookPrice", bookPrice);
+                boCmd.Parameters.AddWithValue("@bookStock", bookStock);
+                boCmd.Parameters.AddWithValue("@bookAuthorID", bookAuthorID);
+                boCmd.Parameters.AddWithValue("@bookPublisherID", bookPublisherID);
+
+                boCmd.ExecuteNonQuery();
+
+                //clearing fields
+                clearFields();
+
+                //closing connection
+                con.Close();
+
+                //successfull
+                MessageBox.Show("book added successfully", "Successfull",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception error)
             {
@@ -166,16 +221,51 @@ namespace libraryManagementSystem
 
         }
 
+        //clearing fields
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
+
+            clearFields();
+
+        }
+
+        private void deleteBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void upEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void bStock_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //user define functions
+
+        public void clearFields()
+        {
             //openning connection if it is close
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
 
-            // filling auther and publisher comboBoxes
+            // clearing fields
             try
             {
                 //enabling comboBoxes
@@ -208,37 +298,7 @@ namespace libraryManagementSystem
                 MessageBox.Show(error.Message, "Clearing Feilds Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            //getting authers name for drop Down
-
         }
-
-        private void deleteBook_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void upEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fillToolStripButton_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void bStock_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //user define functions
-
 
         public void fillAuthorBox()
         {
