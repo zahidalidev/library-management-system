@@ -77,7 +77,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 2995);
+            this.panel1.Size = new System.Drawing.Size(228, 4410);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -316,9 +316,9 @@
             // 
             // viewBooks1
             // 
-            this.viewBooks1.Location = new System.Drawing.Point(228, 16);
+            this.viewBooks1.Location = new System.Drawing.Point(227, 0);
             this.viewBooks1.Name = "viewBooks1";
-            this.viewBooks1.Size = new System.Drawing.Size(1343, 894);
+            this.viewBooks1.Size = new System.Drawing.Size(1499, 3510);
             this.viewBooks1.TabIndex = 2;
             // 
             // Form1
@@ -368,7 +368,6 @@
         private System.Windows.Forms.Panel sideHome;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.IO.FileSystemWatcher fileSystemWatcher2;
-        private viewBooks viewBooks1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button8;
@@ -387,6 +386,7 @@
         private signup signup1;
         private adminLogin adminLogin1;
         private books books1;
+        private viewBooks viewBooks1;
     }
 }
 
