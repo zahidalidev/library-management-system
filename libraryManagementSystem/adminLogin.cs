@@ -78,7 +78,7 @@ namespace libraryManagementSystem
                 if (dt.Rows.Count == 0)
                 {
                     MessageBox.Show("email or password is incorrect", "login Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 //user exist
@@ -96,7 +96,7 @@ namespace libraryManagementSystem
             catch (Exception error)
             {
                 MessageBox.Show(error.Message, "login Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

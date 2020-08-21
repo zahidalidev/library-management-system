@@ -47,7 +47,7 @@ namespace libraryManagementSystem
             catch (Exception error)
             {
                 MessageBox.Show(error.Message, "dropDown box error",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             //getting authers name for drop Down
 
@@ -74,7 +74,7 @@ namespace libraryManagementSystem
             catch (Exception error)
             {
                 MessageBox.Show(error.Message, "Image name is invalid",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -136,7 +136,7 @@ namespace libraryManagementSystem
             catch (Exception error)
             {
                 MessageBox.Show(error.Message, "Invalid Book ID",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -216,7 +216,7 @@ namespace libraryManagementSystem
             catch (Exception error)
             {
                 MessageBox.Show(error.Message, "Invalid Book details",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -238,7 +238,7 @@ namespace libraryManagementSystem
                 //getting current stock
                 string bookID = textBox5.Text.Trim();
 
-                SqlCommand cuCmd = new SqlCommand("select totalStock, currentStock from book where bookID = @bookID", con);
+                SqlCommand cuCmd = new SqlCommand("select totalStock, currentStock, bookImage from book where bookID = @bookID", con);
                 cuCmd.Parameters.AddWithValue("@bookID", bookID);
 
                 SqlDataAdapter cuDa = new SqlDataAdapter(cuCmd);
@@ -250,8 +250,18 @@ namespace libraryManagementSystem
                 string oldTotalStock = cuDt.Rows[0][0].ToString();
                 string oldCurrentStock = cuDt.Rows[0][1].ToString();
 
+                //managing image path
+                string imagePath;
+                if(dest == null)
+                {
+                    imagePath = cuDt.Rows[0][2].ToString();
+                }
+                else
+                {
+                    imagePath = dest;
+                }
+
                 //values from the fields
-                string imagePath = dest;
                 string bookeTitle = bTitle.Text.Trim();
                 string bookGenre = bGenre.Text.Trim();
                 string bookPrice = bPrice.Text.Trim();
@@ -288,7 +298,7 @@ namespace libraryManagementSystem
                 con.Close();
 
                 //successfull
-                MessageBox.Show("book added successfully", "Successfull",
+                MessageBox.Show("book Updated successfully", "Successfull",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception error)
@@ -302,13 +312,43 @@ namespace libraryManagementSystem
         private void button3_Click(object sender, EventArgs e)
         {
 
-
+            //clearing input fields details
             clearFields();
 
         }
 
+        //deleting book
         private void deleteBook_Click(object sender, EventArgs e)
         {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            try
+            {
+                //cheking book exist or not
+                checkBookExist();
+
+                //deleeting book 
+                string bookID = textBox5.Text.Trim();
+                SqlCommand deCmd = new SqlCommand("delete from book where bookID = @bookID", con);
+                deCmd.Parameters.AddWithValue("@bookID", bookID);
+                deCmd.ExecuteNonQuery();
+
+                //clearing input fields details
+                clearFields();
+
+                MessageBox.Show("Deleted Successfullly", "Successfull",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Deleting book Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //cheking book exist or not
 
         }
 
@@ -391,7 +431,7 @@ namespace libraryManagementSystem
             catch (Exception error)
             {
                 MessageBox.Show(error.Message, "Clearing Feilds Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

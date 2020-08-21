@@ -103,7 +103,7 @@ namespace libraryManagementSystem
                 else
                 {
                     MessageBox.Show("User already Exist try to login", "Sign Up Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
 
@@ -119,7 +119,7 @@ namespace libraryManagementSystem
 
                 //showing exception
                 MessageBox.Show(error.Message, "Sign Up Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
