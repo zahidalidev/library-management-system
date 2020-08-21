@@ -77,7 +77,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 4410);
+            this.panel1.Size = new System.Drawing.Size(228, 3605);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -262,28 +262,28 @@
             // 
             this.books1.Location = new System.Drawing.Point(227, 0);
             this.books1.Name = "books1";
-            this.books1.Size = new System.Drawing.Size(1491, 2095);
+            this.books1.Size = new System.Drawing.Size(1514, 2095);
             this.books1.TabIndex = 15;
             // 
             // adminLogin1
             // 
             this.adminLogin1.Location = new System.Drawing.Point(227, 0);
             this.adminLogin1.Name = "adminLogin1";
-            this.adminLogin1.Size = new System.Drawing.Size(1491, 2095);
+            this.adminLogin1.Size = new System.Drawing.Size(1514, 2095);
             this.adminLogin1.TabIndex = 14;
             // 
             // signup1
             // 
             this.signup1.Location = new System.Drawing.Point(228, 0);
             this.signup1.Name = "signup1";
-            this.signup1.Size = new System.Drawing.Size(1490, 2095);
+            this.signup1.Size = new System.Drawing.Size(1513, 2095);
             this.signup1.TabIndex = 13;
             // 
             // userLogin1
             // 
             this.userLogin1.Location = new System.Drawing.Point(227, 0);
             this.userLogin1.Name = "userLogin1";
-            this.userLogin1.Size = new System.Drawing.Size(1491, 2095);
+            this.userLogin1.Size = new System.Drawing.Size(1514, 2095);
             this.userLogin1.TabIndex = 12;
             // 
             // manageUser1
@@ -318,7 +318,7 @@
             // 
             this.viewBooks1.Location = new System.Drawing.Point(227, 0);
             this.viewBooks1.Name = "viewBooks1";
-            this.viewBooks1.Size = new System.Drawing.Size(1499, 3510);
+            this.viewBooks1.Size = new System.Drawing.Size(1514, 3510);
             this.viewBooks1.TabIndex = 2;
             // 
             // Form1
@@ -326,8 +326,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoScrollMargin = new System.Drawing.Size(0, 900);
-            this.AutoScrollMinSize = new System.Drawing.Size(0, 900);
+            this.AutoScrollMargin = new System.Drawing.Size(0, 95);
+            this.AutoScrollMinSize = new System.Drawing.Size(0, 95);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1765, 1000);
             this.Controls.Add(this.books1);
