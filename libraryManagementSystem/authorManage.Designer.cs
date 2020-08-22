@@ -28,18 +28,255 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(authorManage));
+            this.aUpdate = new System.Windows.Forms.Button();
+            this.dBLibraryDataSet2 = new libraryManagementSystem.DBLibraryDataSet2();
+            this.autherBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dBLibraryDataSet1 = new libraryManagementSystem.DBLibraryDataSet1();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.autherTableAdapter1 = new libraryManagementSystem.DBLibraryDataSet1TableAdapters.autherTableAdapter();
+            this.autherTableAdapter = new libraryManagementSystem.DBLibraryDataSetTableAdapters.autherTableAdapter();
+            this.autherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dBLibraryDataSet = new libraryManagementSystem.DBLibraryDataSet();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.aDelete = new System.Windows.Forms.Button();
+            this.aAdd = new System.Windows.Forms.Button();
+            this.aGetDetail = new System.Windows.Forms.Button();
+            this.bGenre = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bGenreajsh = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // aUpdate
+            // 
+            this.aUpdate.BackColor = System.Drawing.Color.Navy;
+            this.aUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aUpdate.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.aUpdate.ForeColor = System.Drawing.Color.White;
+            this.aUpdate.Location = new System.Drawing.Point(308, 647);
+            this.aUpdate.Name = "aUpdate";
+            this.aUpdate.Size = new System.Drawing.Size(159, 57);
+            this.aUpdate.TabIndex = 86;
+            this.aUpdate.Text = "Update";
+            this.aUpdate.UseVisualStyleBackColor = false;
+            // 
+            // dBLibraryDataSet2
+            // 
+            this.dBLibraryDataSet2.DataSetName = "DBLibraryDataSet2";
+            this.dBLibraryDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // autherBindingSource1
+            // 
+            this.autherBindingSource1.DataMember = "auther";
+            this.autherBindingSource1.DataSource = this.dBLibraryDataSet1;
+            // 
+            // dBLibraryDataSet1
+            // 
+            this.dBLibraryDataSet1.DataSetName = "DBLibraryDataSet1";
+            this.dBLibraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // autherTableAdapter1
+            // 
+            this.autherTableAdapter1.ClearBeforeFill = true;
+            // 
+            // autherTableAdapter
+            // 
+            this.autherTableAdapter.ClearBeforeFill = true;
+            // 
+            // autherBindingSource
+            // 
+            this.autherBindingSource.DataMember = "auther";
+            this.autherBindingSource.DataSource = this.dBLibraryDataSet;
+            // 
+            // dBLibraryDataSet
+            // 
+            this.dBLibraryDataSet.DataSetName = "DBLibraryDataSet";
+            this.dBLibraryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(-13, -12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1616, 142);
+            this.panel1.TabIndex = 60;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 25F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(441, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(869, 63);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Manage Author (Add, Update or Delete)";
+            // 
+            // aDelete
+            // 
+            this.aDelete.BackColor = System.Drawing.Color.Maroon;
+            this.aDelete.FlatAppearance.BorderSize = 0;
+            this.aDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aDelete.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aDelete.ForeColor = System.Drawing.SystemColors.Control;
+            this.aDelete.Location = new System.Drawing.Point(495, 650);
+            this.aDelete.Name = "aDelete";
+            this.aDelete.Size = new System.Drawing.Size(159, 50);
+            this.aDelete.TabIndex = 80;
+            this.aDelete.Text = "Delete";
+            this.aDelete.UseVisualStyleBackColor = false;
+            // 
+            // aAdd
+            // 
+            this.aAdd.BackColor = System.Drawing.Color.Green;
+            this.aAdd.FlatAppearance.BorderSize = 0;
+            this.aAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aAdd.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.aAdd.Location = new System.Drawing.Point(121, 650);
+            this.aAdd.Name = "aAdd";
+            this.aAdd.Size = new System.Drawing.Size(159, 50);
+            this.aAdd.TabIndex = 79;
+            this.aAdd.Text = "Add";
+            this.aAdd.UseVisualStyleBackColor = false;
+            // 
+            // aGetDetail
+            // 
+            this.aGetDetail.BackColor = System.Drawing.Color.Green;
+            this.aGetDetail.FlatAppearance.BorderSize = 0;
+            this.aGetDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aGetDetail.Font = new System.Drawing.Font("Franklin Gothic Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.aGetDetail.ForeColor = System.Drawing.SystemColors.Control;
+            this.aGetDetail.Location = new System.Drawing.Point(410, 317);
+            this.aGetDetail.Name = "aGetDetail";
+            this.aGetDetail.Size = new System.Drawing.Size(150, 48);
+            this.aGetDetail.TabIndex = 78;
+            this.aGetDetail.Text = "Get Details";
+            this.aGetDetail.UseVisualStyleBackColor = false;
+            // 
+            // bGenre
+            // 
+            this.bGenre.BackColor = System.Drawing.SystemColors.Control;
+            this.bGenre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bGenre.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bGenre.Location = new System.Drawing.Point(202, 506);
+            this.bGenre.Name = "bGenre";
+            this.bGenre.Size = new System.Drawing.Size(332, 27);
+            this.bGenre.TabIndex = 72;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel4.Location = new System.Drawing.Point(211, 364);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(168, 1);
+            this.panel4.TabIndex = 63;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(211, 332);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(168, 27);
+            this.textBox5.TabIndex = 74;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel6.Location = new System.Drawing.Point(202, 538);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(358, 1);
+            this.panel6.TabIndex = 62;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label1.Location = new System.Drawing.Point(205, 289);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 33);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Author ID";
+            // 
+            // bGenreajsh
+            // 
+            this.bGenreajsh.AutoSize = true;
+            this.bGenreajsh.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.bGenreajsh.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bGenreajsh.Location = new System.Drawing.Point(196, 459);
+            this.bGenreajsh.Name = "bGenreajsh";
+            this.bGenreajsh.Size = new System.Drawing.Size(83, 33);
+            this.bGenreajsh.TabIndex = 55;
+            this.bGenreajsh.Text = "Name";
             // 
             // authorManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.aUpdate);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.aDelete);
+            this.Controls.Add(this.aAdd);
+            this.Controls.Add(this.aGetDetail);
+            this.Controls.Add(this.bGenre);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.bGenreajsh);
             this.Name = "authorManage";
-            this.Size = new System.Drawing.Size(1343, 894);
+            this.Size = new System.Drawing.Size(1528, 2095);
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button aUpdate;
+        private DBLibraryDataSet2 dBLibraryDataSet2;
+        private System.Windows.Forms.BindingSource autherBindingSource1;
+        private DBLibraryDataSet1 dBLibraryDataSet1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private DBLibraryDataSet1TableAdapters.autherTableAdapter autherTableAdapter1;
+        private DBLibraryDataSetTableAdapters.autherTableAdapter autherTableAdapter;
+        private System.Windows.Forms.BindingSource autherBindingSource;
+        private DBLibraryDataSet dBLibraryDataSet;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button aDelete;
+        private System.Windows.Forms.Button aAdd;
+        private System.Windows.Forms.Button aGetDetail;
+        private System.Windows.Forms.TextBox bGenre;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label bGenreajsh;
     }
 }
