@@ -50,10 +50,10 @@
             this.userLogin1 = new libraryManagementSystem.userLogin();
             this.manageUser1 = new libraryManagementSystem.manageUser();
             this.bookIssue1 = new libraryManagementSystem.bookIssue();
-            this.publisherManage1 = new libraryManagementSystem.publisherManage();
             this.viewBooks1 = new libraryManagementSystem.viewBooks();
             this.books1 = new libraryManagementSystem.books();
             this.authorManage1 = new libraryManagementSystem.authorManage();
+            this.publisherManage1 = new libraryManagementSystem.publisherManage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -293,13 +293,6 @@
             this.bookIssue1.Size = new System.Drawing.Size(1343, 894);
             this.bookIssue1.TabIndex = 9;
             // 
-            // publisherManage1
-            // 
-            this.publisherManage1.Location = new System.Drawing.Point(228, 16);
-            this.publisherManage1.Name = "publisherManage1";
-            this.publisherManage1.Size = new System.Drawing.Size(1343, 894);
-            this.publisherManage1.TabIndex = 7;
-            // 
             // viewBooks1
             // 
             this.viewBooks1.Location = new System.Drawing.Point(227, 0);
@@ -321,6 +314,13 @@
             this.authorManage1.Size = new System.Drawing.Size(1528, 2095);
             this.authorManage1.TabIndex = 16;
             // 
+            // publisherManage1
+            // 
+            this.publisherManage1.Location = new System.Drawing.Point(227, 0);
+            this.publisherManage1.Name = "publisherManage1";
+            this.publisherManage1.Size = new System.Drawing.Size(1528, 2095);
+            this.publisherManage1.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -330,6 +330,7 @@
             this.AutoScrollMinSize = new System.Drawing.Size(0, 95);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1765, 1000);
+            this.Controls.Add(this.publisherManage1);
             this.Controls.Add(this.authorManage1);
             this.Controls.Add(this.books1);
             this.Controls.Add(this.adminLogin1);
@@ -337,7 +338,6 @@
             this.Controls.Add(this.userLogin1);
             this.Controls.Add(this.manageUser1);
             this.Controls.Add(this.bookIssue1);
-            this.Controls.Add(this.publisherManage1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.viewBooks1);
             this.Controls.Add(this.panel1);
@@ -378,7 +378,6 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
-        private publisherManage publisherManage1;
         private bookIssue bookIssue1;
         private manageUser manageUser1;
         private userLogin userLogin1;
@@ -387,6 +386,7 @@
         private viewBooks viewBooks1;
         private books books1;
         private authorManage authorManage1;
+        private publisherManage publisherManage1;
     }
 }
 

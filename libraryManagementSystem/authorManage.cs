@@ -15,6 +15,104 @@ namespace libraryManagementSystem
             InitializeComponent();
         }
 
+        private void authorManage_Load(object sender, EventArgs e)
+        {
+            loadAuthors();
+        }
+
+        public void loadAuthors()
+        {
+            //refereshing page
+            Controls.Clear();
+            InitializeComponent();
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            try
+            {
+                //showing author id
+                showAuthorID();
+
+                //showing Author Name
+                showAuthorName();
+
+                //closing connection
+                con.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Loading Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void showAuthorName()
+        {
+            SqlCommand cmd = new SqlCommand("select fullname from auther", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            //showing image from colunm bookImage
+            int i = 0;
+            foreach (DataRow dtRow in dt.Rows)
+            {
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    var field1 = dtRow[dc].ToString();
+                    Label label = new Label();
+
+                    label.Location = new System.Drawing.Point(775, 242 + 40 * i);
+                    //label.TabIndex = 0 + i;
+                    label.Name = "AuthorName" + i.ToString();
+                    //label.ForeColor = SystemColors.WindowFrame;
+                    label.ForeColor = Color.Black;
+                    label.BackColor = System.Drawing.Color.Transparent;
+                    //label.BorderStyle = BorderStyle.Fixed3D;
+                    label.Size = new System.Drawing.Size(200, 20);
+                    label.Text = field1;
+                    label.Font = new Font("Franklin Gothic Medium", 10);
+                    this.Controls.Add(label);
+                    i++;
+                }
+            }
+        }
+
+        public void showAuthorID()
+        {
+            SqlCommand cmd = new SqlCommand("select authorID from auther", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            //showing image from colunm bookImage
+            int i = 0;
+            foreach (DataRow dtRow in dt.Rows)
+            {
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    var field1 = dtRow[dc].ToString();
+                    Label label = new Label();
+
+                    label.Location = new System.Drawing.Point(635, 242 + 40 * i);
+                    //label.TabIndex = 0 + i;
+                    label.Name = "authorID" + i.ToString();
+                    //label.ForeColor = SystemColors.WindowFrame;
+                    label.ForeColor = Color.Black;
+                    label.BackColor = System.Drawing.Color.Transparent;
+                    //label.BorderStyle = BorderStyle.Fixed3D;
+                    label.Size = new System.Drawing.Size(50, 20);
+                    label.Text = field1;
+                    label.Font = new Font("Franklin Gothic Medium", 10);
+                    this.Controls.Add(label);
+                    i++;
+                }
+            }
+        }
+
         private void aGetDetail_Click(object sender, System.EventArgs e)
         {
             try
@@ -82,6 +180,9 @@ namespace libraryManagementSystem
                 //closing connection
                 con.Close();
 
+                //refersginf author details
+                loadAuthors();
+
                 //successfull
                 MessageBox.Show("Author added successfully", "Successfull",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -109,7 +210,7 @@ namespace libraryManagementSystem
                 //cheking author ID
                 checkAuthorID();
 
-                //---------------------- adding Author in the database
+                //---------------------- Updating Author in the database
 
                 //values from the fields
                 string fullname = aName.Text.Trim();
@@ -127,6 +228,9 @@ namespace libraryManagementSystem
 
                 //closing connection
                 con.Close();
+
+                //refreshing author details
+                loadAuthors();
 
                 //successfull
                 MessageBox.Show("Author Updated successfully", "Successfull",
@@ -152,7 +256,7 @@ namespace libraryManagementSystem
                 //cheking author ID
                 checkAuthorID();
 
-                //---------------------- adding Author in the database
+                //---------------------- Deleting Author from the database
 
                 //values from the fields
                 string authorID = textBox5.Text.Trim();
@@ -169,13 +273,16 @@ namespace libraryManagementSystem
                 //closing connection
                 con.Close();
 
+                //refersginf author details
+                loadAuthors();
+
                 //successfull
                 MessageBox.Show("Author Deleted successfully", "Successfull",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception error)
+            catch (Exception)
             {
-                MessageBox.Show(error.Message, "Invalid Author details",
+                MessageBox.Show("This Author have some books, Author cannot be deleted, Delete Books First", "Invalid Author details",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
