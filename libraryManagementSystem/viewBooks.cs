@@ -18,49 +18,49 @@ namespace libraryManagementSystem
 
         private void viewBooks_Load(object sender, System.EventArgs e)
         {
-            try
-            {
-                //openning connection if it is close
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
+            //try
+            //{
+            //    //openning connection if it is close
+            //    if (con.State == ConnectionState.Closed)
+            //    {
+            //        con.Open();
+            //    }
 
-                //showing image
-                showImage();
+            //    //showing image
+            //    showImage();
 
-                //showing Book ID
-                showBookID();
+            //    //showing Book ID
+            //    showBookID();
 
-                //showing book title
-                showBookTitle();
+            //    //showing book title
+            //    showBookTitle();
 
-                //showing description
-                showDescription();
+            //    //showing description
+            //    showDescription();
 
-                //showing Genre
-                showGenre();
+            //    //showing Genre
+            //    showGenre();
 
-                //showing edition
-                showEdition();
+            //    //showing edition
+            //    showEdition();
 
-                //show price
-                showPrice();
+            //    //show price
+            //    showPrice();
 
-                //showing author
-                showAuthor();
+            //    //showing author
+            //    showAuthor();
 
-                //showing publisher
-                showPublisher();
+            //    //showing publisher
+            //    showPublisher();
 
-                //closing connection
-                con.Close();
+            //    //closing connection
+            //    con.Close();
 
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message, "books Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception error)
+            //{
+            //    MessageBox.Show(error.Message, "books Error at Loading", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
         }
 
@@ -368,7 +368,53 @@ namespace libraryManagementSystem
 
         private void aAdd_Click(object sender, EventArgs e)
         {
+            //refereshing page
+            Controls.Clear();
+            InitializeComponent();
 
+            try
+            {
+                //openning connection if it is close
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                //showing image
+                showImage();
+
+                //showing Book ID
+                showBookID();
+
+                //showing book title
+                showBookTitle();
+
+                //showing description
+                showDescription();
+
+                //showing Genre
+                showGenre();
+
+                //showing edition
+                showEdition();
+
+                //show price
+                showPrice();
+
+                //showing author
+                showAuthor();
+
+                //showing publisher
+                showPublisher();
+
+                //closing connection
+                con.Close();
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "books Error at Refreshing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
