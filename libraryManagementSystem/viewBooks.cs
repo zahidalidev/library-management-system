@@ -18,6 +18,19 @@ namespace libraryManagementSystem
 
         private void viewBooks_Load(object sender, System.EventArgs e)
         {
+            //displaygin books at the loading of page
+            loadBooksDetails();
+        }
+
+        //referesh 
+        private void aAdd_Click(object sender, EventArgs e)
+        {
+            loadBooksDetails();
+        }
+
+        //displaying books details
+        public void loadBooksDetails()
+        {
             try
             {
                 //openning connection if it is close
@@ -61,7 +74,6 @@ namespace libraryManagementSystem
             {
                 MessageBox.Show(error.Message, "books Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         public void showPublisher()
@@ -365,5 +377,7 @@ namespace libraryManagementSystem
         {
 
         }
+
+        
     }
 }

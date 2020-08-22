@@ -44,12 +44,13 @@
             this.aDelete = new System.Windows.Forms.Button();
             this.aAdd = new System.Windows.Forms.Button();
             this.aGetDetail = new System.Windows.Forms.Button();
-            this.bGenre = new System.Windows.Forms.TextBox();
+            this.aName = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.bGenreajsh = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet1)).BeginInit();
@@ -70,6 +71,7 @@
             this.aUpdate.TabIndex = 86;
             this.aUpdate.Text = "Update";
             this.aUpdate.UseVisualStyleBackColor = false;
+            this.aUpdate.Click += new System.EventHandler(this.aUpdate_Click);
             // 
             // dBLibraryDataSet2
             // 
@@ -140,6 +142,7 @@
             this.aDelete.TabIndex = 80;
             this.aDelete.Text = "Delete";
             this.aDelete.UseVisualStyleBackColor = false;
+            this.aDelete.Click += new System.EventHandler(this.aDelete_Click);
             // 
             // aAdd
             // 
@@ -154,6 +157,7 @@
             this.aAdd.TabIndex = 79;
             this.aAdd.Text = "Add";
             this.aAdd.UseVisualStyleBackColor = false;
+            this.aAdd.Click += new System.EventHandler(this.aAdd_Click);
             // 
             // aGetDetail
             // 
@@ -168,16 +172,17 @@
             this.aGetDetail.TabIndex = 78;
             this.aGetDetail.Text = "Get Details";
             this.aGetDetail.UseVisualStyleBackColor = false;
+            this.aGetDetail.Click += new System.EventHandler(this.aGetDetail_Click);
             // 
-            // bGenre
+            // aName
             // 
-            this.bGenre.BackColor = System.Drawing.SystemColors.Control;
-            this.bGenre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bGenre.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bGenre.Location = new System.Drawing.Point(202, 506);
-            this.bGenre.Name = "bGenre";
-            this.bGenre.Size = new System.Drawing.Size(332, 27);
-            this.bGenre.TabIndex = 72;
+            this.aName.BackColor = System.Drawing.SystemColors.Control;
+            this.aName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.aName.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aName.Location = new System.Drawing.Point(202, 506);
+            this.aName.Name = "aName";
+            this.aName.Size = new System.Drawing.Size(332, 27);
+            this.aName.TabIndex = 72;
             // 
             // panel4
             // 
@@ -227,16 +232,31 @@
             this.bGenreajsh.TabIndex = 55;
             this.bGenreajsh.Text = "Name";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Maroon;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(1327, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 50);
+            this.button1.TabIndex = 87;
+            this.button1.Text = "Referesh";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // authorManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.aUpdate);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.aDelete);
             this.Controls.Add(this.aAdd);
             this.Controls.Add(this.aGetDetail);
-            this.Controls.Add(this.bGenre);
+            this.Controls.Add(this.aName);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.panel6);
@@ -272,11 +292,12 @@
         private System.Windows.Forms.Button aDelete;
         private System.Windows.Forms.Button aAdd;
         private System.Windows.Forms.Button aGetDetail;
-        private System.Windows.Forms.TextBox bGenre;
+        private System.Windows.Forms.TextBox aName;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label bGenreajsh;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
