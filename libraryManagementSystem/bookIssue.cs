@@ -165,6 +165,11 @@ namespace libraryManagementSystem
                     con.Open();
                 }
 
+                //start transaction
+                SqlCommand tra = new SqlCommand("begin tran", con);
+                tra.ExecuteNonQuery();
+
+
                 //getting values from text boxes
                 string memberid = memID.Text.Trim();
                 string bookid = bookID.Text.Trim();
@@ -204,6 +209,10 @@ namespace libraryManagementSystem
                 cmd.Parameters.AddWithValue("@bookid", bookid);
                 cmd.ExecuteNonQuery();
 
+                //commit transaction
+                SqlCommand commit = new SqlCommand("commit", con);
+                commit.ExecuteNonQuery();
+
                 //Successfull
                 MessageBox.Show("Book Issued Successfully", "Issued",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -216,6 +225,19 @@ namespace libraryManagementSystem
             }
             catch (Exception error)
             {
+                //openning connection if it is close
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                //rollback transaction
+                SqlCommand roll = new SqlCommand("rollback", con);
+                roll.ExecuteNonQuery();
+
+                //close connection
+                con.Close();
+
                 MessageBox.Show(error.Message, "Issue book error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -230,6 +252,10 @@ namespace libraryManagementSystem
                 {
                     con.Open();
                 }
+
+                //start transaction
+                SqlCommand tra = new SqlCommand("begin tran", con);
+                tra.ExecuteNonQuery();
 
                 //getting values from text boxes
                 string memberid = memID.Text.Trim();
@@ -272,7 +298,11 @@ namespace libraryManagementSystem
                 cmd.Parameters.AddWithValue("@bookid", bookid);
                 cmd.ExecuteNonQuery();
 
-                //
+                //commit transaction
+                SqlCommand commit = new SqlCommand("commit", con);
+                commit.ExecuteNonQuery();
+
+                //Successfull
                 MessageBox.Show("Book returned Successfully", "Returned",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -284,6 +314,19 @@ namespace libraryManagementSystem
             }
             catch (Exception error)
             {
+                //openning connection if it is close
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                //rollback transaction
+                SqlCommand roll = new SqlCommand("rollback", con);
+                roll.ExecuteNonQuery();
+
+                //close connection
+                con.Close();
+
                 MessageBox.Show(error.Message, "Deleting book error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

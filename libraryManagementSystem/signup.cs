@@ -110,6 +110,12 @@ namespace libraryManagementSystem
             }
             catch (Exception error)
             {
+                //openning connection if it is close
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
                 //rollback transaction
                 SqlCommand roll = new SqlCommand("rollback", con);
                 roll.ExecuteNonQuery();
