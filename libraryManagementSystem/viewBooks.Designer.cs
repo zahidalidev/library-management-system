@@ -61,6 +61,7 @@
             // aAdd
             // 
             this.aAdd.BackColor = System.Drawing.Color.Maroon;
+            this.aAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("aAdd.BackgroundImage")));
             this.aAdd.FlatAppearance.BorderSize = 0;
             this.aAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aAdd.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

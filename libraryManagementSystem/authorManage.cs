@@ -216,7 +216,7 @@ namespace libraryManagementSystem
                 string fullname = aName.Text.Trim();
                 string authorID = textBox5.Text.Trim();
 
-                //inserting Author data
+                //updating Author data
                 SqlCommand boCmd = new SqlCommand("UPDATE auther set fullname = @fullname where authorID = @authorID", con);
                 boCmd.Parameters.AddWithValue("@fullname", fullname);
                 boCmd.Parameters.AddWithValue("@authorID", authorID);

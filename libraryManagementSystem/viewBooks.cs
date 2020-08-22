@@ -18,6 +18,22 @@ namespace libraryManagementSystem
 
         private void viewBooks_Load(object sender, System.EventArgs e)
         {
+            //openning connection if it is close
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            try
+            {
+                //showing image
+                showImage();
+            }
+            catch (Exception)
+            {
+
+            }
+
             try
             {
                 //openning connection if it is close
@@ -27,7 +43,7 @@ namespace libraryManagementSystem
                 }
 
                 //showing image
-                showImage();
+                //showImage();
 
                 //showing Book ID
                 showBookID();
