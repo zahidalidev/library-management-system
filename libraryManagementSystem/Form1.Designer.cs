@@ -45,15 +45,15 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.label2 = new System.Windows.Forms.Label();
+            this.publisherManage1 = new libraryManagementSystem.publisherManage();
+            this.authorManage1 = new libraryManagementSystem.authorManage();
+            this.books1 = new libraryManagementSystem.books();
             this.adminLogin1 = new libraryManagementSystem.adminLogin();
             this.signup1 = new libraryManagementSystem.signup();
             this.userLogin1 = new libraryManagementSystem.userLogin();
             this.manageUser1 = new libraryManagementSystem.manageUser();
             this.bookIssue1 = new libraryManagementSystem.bookIssue();
             this.viewBooks1 = new libraryManagementSystem.viewBooks();
-            this.books1 = new libraryManagementSystem.books();
-            this.authorManage1 = new libraryManagementSystem.authorManage();
-            this.publisherManage1 = new libraryManagementSystem.publisherManage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -258,6 +258,27 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "View Books";
             // 
+            // publisherManage1
+            // 
+            this.publisherManage1.Location = new System.Drawing.Point(227, 0);
+            this.publisherManage1.Name = "publisherManage1";
+            this.publisherManage1.Size = new System.Drawing.Size(1528, 2095);
+            this.publisherManage1.TabIndex = 17;
+            // 
+            // authorManage1
+            // 
+            this.authorManage1.Location = new System.Drawing.Point(228, 0);
+            this.authorManage1.Name = "authorManage1";
+            this.authorManage1.Size = new System.Drawing.Size(1528, 2095);
+            this.authorManage1.TabIndex = 16;
+            // 
+            // books1
+            // 
+            this.books1.Location = new System.Drawing.Point(227, 0);
+            this.books1.Name = "books1";
+            this.books1.Size = new System.Drawing.Size(1514, 2095);
+            this.books1.TabIndex = 15;
+            // 
             // adminLogin1
             // 
             this.adminLogin1.Location = new System.Drawing.Point(227, 0);
@@ -299,27 +320,6 @@
             this.viewBooks1.Name = "viewBooks1";
             this.viewBooks1.Size = new System.Drawing.Size(1514, 3510);
             this.viewBooks1.TabIndex = 2;
-            // 
-            // books1
-            // 
-            this.books1.Location = new System.Drawing.Point(227, 0);
-            this.books1.Name = "books1";
-            this.books1.Size = new System.Drawing.Size(1514, 2095);
-            this.books1.TabIndex = 15;
-            // 
-            // authorManage1
-            // 
-            this.authorManage1.Location = new System.Drawing.Point(228, 0);
-            this.authorManage1.Name = "authorManage1";
-            this.authorManage1.Size = new System.Drawing.Size(1528, 2095);
-            this.authorManage1.TabIndex = 16;
-            // 
-            // publisherManage1
-            // 
-            this.publisherManage1.Location = new System.Drawing.Point(227, 0);
-            this.publisherManage1.Name = "publisherManage1";
-            this.publisherManage1.Size = new System.Drawing.Size(1528, 2095);
-            this.publisherManage1.TabIndex = 17;
             // 
             // Form1
             // 
