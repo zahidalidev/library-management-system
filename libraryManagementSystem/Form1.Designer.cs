@@ -63,6 +63,7 @@
             this.books1 = new libraryManagementSystem.books();
             this.signup1 = new libraryManagementSystem.signup();
             this.viewBooks1 = new libraryManagementSystem.viewBooks();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -73,6 +74,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button16);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button15);
@@ -102,7 +104,7 @@
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(217, 66);
             this.button16.TabIndex = 11;
-            this.button16.Text = "Log Out";
+            this.button16.Text = "LogOut";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
@@ -223,7 +225,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(217, 66);
             this.button2.TabIndex = 3;
-            this.button2.Text = "User Login";
+            this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -442,6 +444,20 @@
             this.viewBooks1.Size = new System.Drawing.Size(1514, 3510);
             this.viewBooks1.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(12, 226);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(216, 50);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Sign Up";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -519,6 +535,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

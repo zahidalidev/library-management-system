@@ -22,19 +22,24 @@ namespace libraryManagementSystem
             sideHome.Top = button8.Top;
             viewBooks1.BringToFront();
 
-            //if (LoginInfo.admin == "false" && LoginInfo.login == "true")
-            //{
-            //    button2.Text = "zahid";
-            //    button10.Visible = false;
-            //    button11.Visible = false;
-            //    button12.Visible = false;
-            //    button13.Visible = false;
-            //    button14.Visible = true;
-            //    button15.Visible = true;
-            //    button16.Visible = true;
-            //}
-
-
+            //label of name
+            button1.Visible = false;
+            //login
+            button2.Visible = true;
+            //signup
+            button10.Visible = true;
+            //author
+            button11.Visible = false;
+            //publisher
+            button12.Visible = false;
+            //book manager
+            button13.Visible = false;
+            //book issue
+            button14.Visible = false;
+            //manage user
+            button15.Visible = false;
+            //logout
+            button16.Visible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -56,9 +61,15 @@ namespace libraryManagementSystem
         {
             sideHome.Height = button2.Height;
             sideHome.Top = button2.Top;
-            //userLogin1.BringToFront();
-            viewBooks1.SendToBack();
             this.BringToFront();
+
+            viewBooks1.SendToBack();
+            signup1.SendToBack();
+            manageUser1.SendToBack();
+            authorManage1.SendToBack();
+            publisherManage1.SendToBack();
+            books1.SendToBack();
+            bookIssue1.SendToBack();
         }
 
         private void button8_Click_1(object sender, EventArgs e)
@@ -114,7 +125,8 @@ namespace libraryManagementSystem
         {
             sideHome.Height = button16.Height;
             sideHome.Top = button16.Top;
-            //adminLogin1.BringToFront();
+            //refereshing page
+            Form1_Load(sender, e);
         }
 
         private void adminLogin1_Load(object sender, EventArgs e)
@@ -174,6 +186,31 @@ namespace libraryManagementSystem
 
                 if (aDt.Rows.Count != 0)
                 {
+                    sideHome.Height = button8.Height;
+                    sideHome.Top = button8.Top;
+                    viewBooks1.BringToFront();
+
+                    //label of name
+                    button1.Visible = true;
+                    button1.Text = "Hi Admin";
+                    //login
+                    button2.Visible = false;
+                    //signup
+                    button10.Visible = false;
+                    //author
+                    button11.Visible = true;
+                    //publisher
+                    button12.Visible = true;
+                    //book manager
+                    button13.Visible = true;
+                    //book issue
+                    button14.Visible = true;
+                    //manage user
+                    button15.Visible = true;
+                    //logout
+                    button16.Visible = true;
+
+
                     MessageBox.Show("Hi Admin", "Login Successful",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -198,6 +235,31 @@ namespace libraryManagementSystem
                     else
                     {
                         string dtEmail = dt.Rows[0][2].ToString();
+
+                        sideHome.Height = button8.Height;
+                        sideHome.Top = button8.Top;
+                        viewBooks1.BringToFront();
+
+                        //label of name
+                        button1.Visible = true;
+                        button1.Text = dtEmail;
+                        //login
+                        button2.Visible = false;
+                        //signup
+                        button10.Visible = false;
+                        //author
+                        button11.Visible = false;
+                        //publisher
+                        button12.Visible = false;
+                        //book manager
+                        button13.Visible = false;
+                        //book issue
+                        button14.Visible = false;
+                        //manage user
+                        button15.Visible = false;
+                        //logout
+                        button16.Visible = true;
+
                         MessageBox.Show("Login Successful", "Hi " + dtEmail,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
