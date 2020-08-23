@@ -45,15 +45,15 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.label2 = new System.Windows.Forms.Label();
+            this.bookIssue1 = new libraryManagementSystem.bookIssue();
             this.publisherManage1 = new libraryManagementSystem.publisherManage();
             this.authorManage1 = new libraryManagementSystem.authorManage();
             this.books1 = new libraryManagementSystem.books();
             this.adminLogin1 = new libraryManagementSystem.adminLogin();
             this.signup1 = new libraryManagementSystem.signup();
             this.userLogin1 = new libraryManagementSystem.userLogin();
-            this.manageUser1 = new libraryManagementSystem.manageUser();
             this.viewBooks1 = new libraryManagementSystem.viewBooks();
-            this.bookIssue1 = new libraryManagementSystem.bookIssue();
+            this.manageUser1 = new libraryManagementSystem.manageUser();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -258,6 +258,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "View Books";
             // 
+            // bookIssue1
+            // 
+            this.bookIssue1.Location = new System.Drawing.Point(227, 0);
+            this.bookIssue1.Name = "bookIssue1";
+            this.bookIssue1.Size = new System.Drawing.Size(1528, 2095);
+            this.bookIssue1.TabIndex = 18;
+            // 
             // publisherManage1
             // 
             this.publisherManage1.Location = new System.Drawing.Point(227, 0);
@@ -300,13 +307,6 @@
             this.userLogin1.Size = new System.Drawing.Size(1514, 2095);
             this.userLogin1.TabIndex = 12;
             // 
-            // manageUser1
-            // 
-            this.manageUser1.Location = new System.Drawing.Point(228, 16);
-            this.manageUser1.Name = "manageUser1";
-            this.manageUser1.Size = new System.Drawing.Size(1343, 894);
-            this.manageUser1.TabIndex = 10;
-            // 
             // viewBooks1
             // 
             this.viewBooks1.Location = new System.Drawing.Point(227, 0);
@@ -314,12 +314,12 @@
             this.viewBooks1.Size = new System.Drawing.Size(1514, 3510);
             this.viewBooks1.TabIndex = 2;
             // 
-            // bookIssue1
+            // manageUser1
             // 
-            this.bookIssue1.Location = new System.Drawing.Point(227, 0);
-            this.bookIssue1.Name = "bookIssue1";
-            this.bookIssue1.Size = new System.Drawing.Size(1528, 2095);
-            this.bookIssue1.TabIndex = 18;
+            this.manageUser1.Location = new System.Drawing.Point(227, 0);
+            this.manageUser1.Name = "manageUser1";
+            this.manageUser1.Size = new System.Drawing.Size(1528, 2095);
+            this.manageUser1.TabIndex = 19;
             // 
             // Form1
             // 
@@ -330,6 +330,7 @@
             this.AutoScrollMinSize = new System.Drawing.Size(0, 95);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1765, 1000);
+            this.Controls.Add(this.manageUser1);
             this.Controls.Add(this.bookIssue1);
             this.Controls.Add(this.publisherManage1);
             this.Controls.Add(this.authorManage1);
@@ -337,7 +338,6 @@
             this.Controls.Add(this.adminLogin1);
             this.Controls.Add(this.signup1);
             this.Controls.Add(this.userLogin1);
-            this.Controls.Add(this.manageUser1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.viewBooks1);
             this.Controls.Add(this.panel1);
@@ -378,7 +378,6 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
-        private manageUser manageUser1;
         private userLogin userLogin1;
         private signup signup1;
         private adminLogin adminLogin1;
@@ -387,6 +386,7 @@
         private authorManage authorManage1;
         private publisherManage publisherManage1;
         private bookIssue bookIssue1;
+        private manageUser manageUser1;
     }
 }
 
