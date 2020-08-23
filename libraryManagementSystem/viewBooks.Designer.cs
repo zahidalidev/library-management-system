@@ -81,7 +81,7 @@
             this.Controls.Add(this.aAdd);
             this.Controls.Add(this.panel1);
             this.Name = "viewBooks";
-            this.Size = new System.Drawing.Size(1545, 2095);
+            this.Size = new System.Drawing.Size(1545, 2069);
             this.Load += new System.EventHandler(this.viewBooks_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

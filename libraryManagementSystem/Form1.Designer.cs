@@ -90,7 +90,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 3605);
+            this.panel1.Size = new System.Drawing.Size(228, 1000);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -294,7 +294,7 @@
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Location = new System.Drawing.Point(227, -2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1500, 2095);
+            this.panel3.Size = new System.Drawing.Size(1514, 2095);
             this.panel3.TabIndex = 20;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
@@ -318,7 +318,7 @@
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.loginButton.Location = new System.Drawing.Point(659, 700);
+            this.loginButton.Location = new System.Drawing.Point(650, 708);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(159, 50);
             this.loginButton.TabIndex = 20;
@@ -462,9 +462,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoScrollMargin = new System.Drawing.Size(0, 95);
-            this.AutoScrollMinSize = new System.Drawing.Size(0, 95);
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1739, 1000);
             this.Controls.Add(this.panel3);
