@@ -16,6 +16,7 @@ namespace libraryManagementSystem
             InitializeComponent();
         }
 
+        int offsetVlaue = 0;
         private void viewBooks_Load(object sender, System.EventArgs e)
         {
             //openning connection if it is close
@@ -80,9 +81,12 @@ namespace libraryManagementSystem
 
         }
 
+        
         public void showPublisher()
         {
-            SqlCommand cmd = new SqlCommand("select p.fullname from book b JOIN publisher p on b.publisherID = p.publisherID", con);
+            SqlCommand cmd = new SqlCommand("select p.fullname from book b JOIN publisher p on b.publisherID = p.publisherID ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -114,7 +118,9 @@ namespace libraryManagementSystem
 
         public void showAuthor()
         {
-            SqlCommand cmd = new SqlCommand("select a.fullname from book b JOIN auther a on b.authorID = a.authorID", con);
+            SqlCommand cmd = new SqlCommand("select a.fullname from book b JOIN auther a on b.authorID = a.authorID ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -146,7 +152,9 @@ namespace libraryManagementSystem
 
         public void showPrice()
         {
-            SqlCommand cmd = new SqlCommand("select price from book", con);
+            SqlCommand cmd = new SqlCommand("select price from book ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -178,7 +186,9 @@ namespace libraryManagementSystem
 
         public void showEdition()
         {
-            SqlCommand cmd = new SqlCommand("select edition from book", con);
+            SqlCommand cmd = new SqlCommand("select edition from book ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -211,7 +221,9 @@ namespace libraryManagementSystem
 
         public void showGenre()
         {
-            SqlCommand cmd = new SqlCommand("select genre from book", con);
+            SqlCommand cmd = new SqlCommand("select genre from book ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -244,7 +256,9 @@ namespace libraryManagementSystem
 
         public void showDescription()
         {
-            SqlCommand cmd = new SqlCommand("select description from book", con);
+            SqlCommand cmd = new SqlCommand("select description from book ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -277,7 +291,9 @@ namespace libraryManagementSystem
 
         public void showBookTitle()
         {
-            SqlCommand cmd = new SqlCommand("select name from book", con);
+            SqlCommand cmd = new SqlCommand("select name from book ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -308,7 +324,9 @@ namespace libraryManagementSystem
         }
         public void showBookID()
         {
-            SqlCommand cmd = new SqlCommand("select bookID from book", con);
+            SqlCommand cmd = new SqlCommand("select bookID from book ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -340,7 +358,9 @@ namespace libraryManagementSystem
 
         public void showImage()
         {
-            SqlCommand imgCmd = new SqlCommand("select bookImage from book", con);
+            SqlCommand imgCmd = new SqlCommand("select bookImage from book ORDER BY bookID OFFSET @offsetValye ROWS FETCH NEXT 3 ROWS ONLY", con);
+            imgCmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter imgDa = new SqlDataAdapter(imgCmd);
             DataTable imgDt = new DataTable();
             imgDa.Fill(imgDt);
@@ -385,6 +405,12 @@ namespace libraryManagementSystem
         private void aAdd_Click(object sender, EventArgs e)
         {
             //refereshing page
+            reloadWithAllValues();
+        }
+
+
+        public void reloadWithAllValues()
+        {
             Controls.Clear();
             InitializeComponent();
 
@@ -431,6 +457,37 @@ namespace libraryManagementSystem
             {
                 MessageBox.Show(error.Message, "books Error at Refreshing", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void previousPage_Click(object sender, EventArgs e)
+        {
+            if(offsetVlaue > 0)
+            {
+                offsetVlaue = offsetVlaue - 3;
+
+                //refereshing page
+                reloadWithAllValues();
+            }
+        }
+
+        private void nextPage_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("select bookID from book", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            string tableLength = dt.Rows.Count.ToString();
+            int length = int.Parse(tableLength);
+
+            if(offsetVlaue < length - 2)
+            {
+                offsetVlaue = offsetVlaue + 3;
+
+                //refereshing page
+                reloadWithAllValues();
+            }
+
         }
     }
 }
