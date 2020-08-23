@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminLogin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="adminLogin.Designer.cs">
-      <DependentUpon>adminLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="authorManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,21 +121,12 @@
     <Compile Include="signup.Designer.cs">
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
-    <Compile Include="userLogin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="userLogin.Designer.cs">
-      <DependentUpon>userLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="viewBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="viewBooks.Designer.cs">
       <DependentUpon>viewBooks.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="adminLogin.resx">
-      <DependentUpon>adminLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="authorManage.resx">
       <DependentUpon>authorManage.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="userLogin.resx">
-      <DependentUpon>userLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewBooks.resx">
       <DependentUpon>viewBooks.cs</DependentUpon>

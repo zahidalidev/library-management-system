@@ -12,7 +12,7 @@ EXEC sp_changedbowner 'sa'
 -- ----------------------------------------------------------------------------
 CREATE TABLE admin (
   adminID INT NOT NULL IDENTITY,
-  username VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
   password VARCHAR(45) NOT NULL,
   PRIMARY KEY (adminID)
 )
