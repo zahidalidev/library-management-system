@@ -65,6 +65,7 @@ namespace libraryManagementSystem
 
             viewBooks1.SendToBack();
             signup1.SendToBack();
+            signup1.Hide();
             manageUser1.SendToBack();
             authorManage1.SendToBack();
             publisherManage1.SendToBack();
@@ -83,6 +84,7 @@ namespace libraryManagementSystem
         {
             sideHome.Height = button10.Height;
             sideHome.Top = button10.Top;
+            signup1.Show();
             signup1.BringToFront();
         }
 

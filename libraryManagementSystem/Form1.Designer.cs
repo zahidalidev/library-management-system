@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -47,23 +48,22 @@
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.signup1 = new libraryManagementSystem.signup();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.manageUser1 = new libraryManagementSystem.manageUser();
             this.bookIssue1 = new libraryManagementSystem.bookIssue();
             this.publisherManage1 = new libraryManagementSystem.publisherManage();
             this.authorManage1 = new libraryManagementSystem.authorManage();
             this.books1 = new libraryManagementSystem.books();
             this.viewBooks1 = new libraryManagementSystem.viewBooks();
-            this.button1 = new System.Windows.Forms.Button();
-            this.signup1 = new libraryManagementSystem.signup();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -93,6 +93,20 @@
             this.panel1.Size = new System.Drawing.Size(228, 1000);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(12, 226);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(216, 50);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Sign Up";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // button16
             // 
@@ -284,7 +298,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.loginButton);
+            this.panel3.Controls.Add(this.signup1);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
@@ -292,24 +306,12 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.loginButton);
             this.panel3.Location = new System.Drawing.Point(227, -2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1613, 2095);
             this.panel3.TabIndex = 20;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 30F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(469, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(592, 75);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Login to Your Account";
             // 
             // loginButton
             // 
@@ -326,6 +328,47 @@
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
+            // panel7
+            // 
+            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Location = new System.Drawing.Point(0, -25);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1546, 311);
+            this.panel7.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 30F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(469, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(592, 75);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Login to Your Account";
+            // 
+            // signup1
+            // 
+            this.signup1.Location = new System.Drawing.Point(1, -22);
+            this.signup1.Name = "signup1";
+            this.signup1.Size = new System.Drawing.Size(1553, 2006);
+            this.signup1.TabIndex = 21;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label5.Location = new System.Drawing.Point(476, 403);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 33);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Email";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -336,6 +379,22 @@
             this.label4.Size = new System.Drawing.Size(124, 33);
             this.label4.TabIndex = 19;
             this.label4.Text = "Password";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel6.Location = new System.Drawing.Point(482, 482);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(508, 1);
+            this.panel6.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel4.Location = new System.Drawing.Point(482, 646);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(508, 1);
+            this.panel4.TabIndex = 16;
             // 
             // textBox2
             // 
@@ -357,49 +416,11 @@
             this.textBox1.Size = new System.Drawing.Size(508, 27);
             this.textBox1.TabIndex = 17;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel4.Location = new System.Drawing.Point(482, 646);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(508, 1);
-            this.panel4.TabIndex = 16;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.Location = new System.Drawing.Point(482, 482);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(508, 1);
-            this.panel6.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label5.Location = new System.Drawing.Point(476, 403);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 33);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Email";
-            // 
-            // panel7
-            // 
-            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.signup1);
-            this.panel7.Location = new System.Drawing.Point(0, -25);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1546, 311);
-            this.panel7.TabIndex = 14;
-            // 
             // manageUser1
             // 
             this.manageUser1.Location = new System.Drawing.Point(227, 0);
             this.manageUser1.Name = "manageUser1";
-            this.manageUser1.Size = new System.Drawing.Size(1613, 2095);
+            this.manageUser1.Size = new System.Drawing.Size(1528, 2095);
             this.manageUser1.TabIndex = 19;
             this.manageUser1.Load += new System.EventHandler(this.manageUser1_Load);
             // 
@@ -414,7 +435,7 @@
             // 
             this.publisherManage1.Location = new System.Drawing.Point(227, 0);
             this.publisherManage1.Name = "publisherManage1";
-            this.publisherManage1.Size = new System.Drawing.Size(1613, 2095);
+            this.publisherManage1.Size = new System.Drawing.Size(1528, 2095);
             this.publisherManage1.TabIndex = 17;
             // 
             // authorManage1
@@ -437,27 +458,6 @@
             this.viewBooks1.Name = "viewBooks1";
             this.viewBooks1.Size = new System.Drawing.Size(1575, 3510);
             this.viewBooks1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F);
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(12, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 50);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Sign Up";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // signup1
-            // 
-            this.signup1.Location = new System.Drawing.Point(1, 27);
-            this.signup1.Name = "signup1";
-            this.signup1.Size = new System.Drawing.Size(1500, 2095);
-            this.signup1.TabIndex = 21;
             // 
             // Form1
             // 
