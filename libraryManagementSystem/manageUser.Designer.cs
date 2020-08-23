@@ -109,7 +109,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(-79, -6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1616, 142);
+            this.panel1.Size = new System.Drawing.Size(1753, 142);
             this.panel1.TabIndex = 110;
             // 
             // label3
