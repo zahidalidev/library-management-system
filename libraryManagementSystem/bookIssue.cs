@@ -15,6 +15,7 @@ namespace libraryManagementSystem
             InitializeComponent();
         }
 
+        int offsetVlaue = 0;
         private void bookIssue_Load(object sender, EventArgs e)
         {
             loadMemBookIssue();
@@ -52,7 +53,9 @@ namespace libraryManagementSystem
         //showing member ID
         public void showMemberID()
         {
-            SqlCommand cmd = new SqlCommand("select memberID from memberbookissue", con);
+            SqlCommand cmd = new SqlCommand("select memberID from memberbookissue ORDER BY memberID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -82,7 +85,9 @@ namespace libraryManagementSystem
         //showing book ID
         public void showBookID()
         {
-            SqlCommand cmd = new SqlCommand("select bookID from memberbookissue", con);
+            SqlCommand cmd = new SqlCommand("select bookID from memberbookissue ORDER BY memberID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -359,6 +364,43 @@ namespace libraryManagementSystem
             if (dt.Rows.Count == 0)
             {
                 throw new Exception("Book with the given ID does not exist");
+            }
+        }
+
+        private void previousPage_Click(object sender, EventArgs e)
+        {
+            if (offsetVlaue > 0)
+            {
+                offsetVlaue = offsetVlaue - 6;
+
+                //refereshing page
+                loadMemBookIssue();
+            }
+        }
+
+        private void nextPage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select memberID from memberbookissue", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                string tableLength = dt.Rows.Count.ToString();
+                int length = int.Parse(tableLength);
+
+                if (offsetVlaue < length - 6)
+                {
+                    offsetVlaue = offsetVlaue + 6;
+
+                    //refereshing page
+                    loadMemBookIssue();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Pagination Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

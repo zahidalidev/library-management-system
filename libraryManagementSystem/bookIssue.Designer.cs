@@ -57,6 +57,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.previousPage = new System.Windows.Forms.Button();
+            this.nextPage = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource)).BeginInit();
@@ -311,10 +313,42 @@
             this.label6.TabIndex = 101;
             this.label6.Text = "Book Title";
             // 
+            // previousPage
+            // 
+            this.previousPage.BackColor = System.Drawing.Color.Gray;
+            this.previousPage.FlatAppearance.BorderSize = 0;
+            this.previousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.previousPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previousPage.ForeColor = System.Drawing.SystemColors.Control;
+            this.previousPage.Location = new System.Drawing.Point(981, 791);
+            this.previousPage.Name = "previousPage";
+            this.previousPage.Size = new System.Drawing.Size(91, 50);
+            this.previousPage.TabIndex = 107;
+            this.previousPage.Text = "<<";
+            this.previousPage.UseVisualStyleBackColor = false;
+            this.previousPage.Click += new System.EventHandler(this.previousPage_Click);
+            // 
+            // nextPage
+            // 
+            this.nextPage.BackColor = System.Drawing.Color.Gray;
+            this.nextPage.FlatAppearance.BorderSize = 0;
+            this.nextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextPage.ForeColor = System.Drawing.SystemColors.Control;
+            this.nextPage.Location = new System.Drawing.Point(1199, 791);
+            this.nextPage.Name = "nextPage";
+            this.nextPage.Size = new System.Drawing.Size(91, 50);
+            this.nextPage.TabIndex = 106;
+            this.nextPage.Text = ">>";
+            this.nextPage.UseVisualStyleBackColor = false;
+            this.nextPage.Click += new System.EventHandler(this.nextPage_Click);
+            // 
             // bookIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.previousPage);
+            this.Controls.Add(this.nextPage);
             this.Controls.Add(this.BookTitle);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.bookID);
@@ -377,5 +411,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox bookID;
+        public System.Windows.Forms.Button previousPage;
+        public System.Windows.Forms.Button nextPage;
     }
 }

@@ -15,6 +15,7 @@ namespace libraryManagementSystem
             InitializeComponent();
         }
 
+        int offsetVlaue = 0;
         private void manageUser_Load(object sender, System.EventArgs e)
         {
             loadMembers();
@@ -58,7 +59,9 @@ namespace libraryManagementSystem
         //showing email
         public void showEmail()
         {
-            SqlCommand cmd = new SqlCommand("select email from member", con);
+            SqlCommand cmd = new SqlCommand("select email from member ORDER BY memberID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -88,7 +91,9 @@ namespace libraryManagementSystem
         //showing contact number
         public void showContact()
         {
-            SqlCommand cmd = new SqlCommand("select mobileNumber from member", con);
+            SqlCommand cmd = new SqlCommand("select mobileNumber from member ORDER BY memberID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -118,7 +123,9 @@ namespace libraryManagementSystem
         //showing User name
         public void showFullName()
         {
-            SqlCommand cmd = new SqlCommand("select fullname from member", con);
+            SqlCommand cmd = new SqlCommand("select fullname from member ORDER BY memberID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -148,7 +155,9 @@ namespace libraryManagementSystem
         //showing member id
         public void showMemberID()
         {
-            SqlCommand cmd = new SqlCommand("select memberID from member", con);
+            SqlCommand cmd = new SqlCommand("select memberID from member ORDER BY memberID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -245,6 +254,43 @@ namespace libraryManagementSystem
             if (dt.Rows.Count != 0)
             {
                 throw new Exception("This member has some books to return, Cannot delete account");
+            }
+        }
+
+        private void previousPage_Click(object sender, EventArgs e)
+        {
+            if (offsetVlaue > 0)
+            {
+                offsetVlaue = offsetVlaue - 6;
+
+                //refereshing page
+                loadMembers();
+            }
+        }
+
+        private void nextPage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select memberID from member", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                string tableLength = dt.Rows.Count.ToString();
+                int length = int.Parse(tableLength);
+
+                if (offsetVlaue < length - 6)
+                {
+                    offsetVlaue = offsetVlaue + 6;
+
+                    //refereshing page
+                    loadMembers();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Pagination Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
