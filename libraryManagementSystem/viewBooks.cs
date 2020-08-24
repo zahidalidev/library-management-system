@@ -480,7 +480,7 @@ namespace libraryManagementSystem
             string tableLength = dt.Rows.Count.ToString();
             int length = int.Parse(tableLength);
 
-            if(offsetVlaue < length - 2)
+            if(offsetVlaue < length - 3)
             {
                 offsetVlaue = offsetVlaue + 3;
 
