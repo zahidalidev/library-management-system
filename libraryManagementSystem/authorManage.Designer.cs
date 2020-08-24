@@ -52,6 +52,8 @@
             this.bGenreajsh = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.previousPage = new System.Windows.Forms.Button();
+            this.nextPage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autherBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet1)).BeginInit();
@@ -259,10 +261,42 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "AUTHOR NAME";
             // 
+            // previousPage
+            // 
+            this.previousPage.BackColor = System.Drawing.Color.Gray;
+            this.previousPage.FlatAppearance.BorderSize = 0;
+            this.previousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.previousPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.previousPage.ForeColor = System.Drawing.SystemColors.Control;
+            this.previousPage.Location = new System.Drawing.Point(929, 839);
+            this.previousPage.Name = "previousPage";
+            this.previousPage.Size = new System.Drawing.Size(91, 50);
+            this.previousPage.TabIndex = 88;
+            this.previousPage.Text = "<<";
+            this.previousPage.UseVisualStyleBackColor = false;
+            this.previousPage.Click += new System.EventHandler(this.previousPage_Click);
+            // 
+            // nextPage
+            // 
+            this.nextPage.BackColor = System.Drawing.Color.Gray;
+            this.nextPage.FlatAppearance.BorderSize = 0;
+            this.nextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextPage.ForeColor = System.Drawing.SystemColors.Control;
+            this.nextPage.Location = new System.Drawing.Point(1147, 839);
+            this.nextPage.Name = "nextPage";
+            this.nextPage.Size = new System.Drawing.Size(91, 50);
+            this.nextPage.TabIndex = 87;
+            this.nextPage.Text = ">>";
+            this.nextPage.UseVisualStyleBackColor = false;
+            this.nextPage.Click += new System.EventHandler(this.nextPage_Click);
+            // 
             // authorManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.previousPage);
+            this.Controls.Add(this.nextPage);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.aUpdate);
@@ -315,5 +349,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Button previousPage;
+        public System.Windows.Forms.Button nextPage;
     }
 }

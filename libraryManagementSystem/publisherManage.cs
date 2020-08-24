@@ -15,6 +15,7 @@ namespace libraryManagementSystem
             InitializeComponent();
         }
 
+        int offsetVlaue = 0;
         private void publisherManage_Load(object sender, System.EventArgs e)
         {
             loadPublishers();
@@ -51,7 +52,9 @@ namespace libraryManagementSystem
 
         public void showPublisherName()
         {
-            SqlCommand cmd = new SqlCommand("select fullname from publisher", con);
+            SqlCommand cmd = new SqlCommand("select fullname from publisher ORDER BY publisherID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -83,7 +86,9 @@ namespace libraryManagementSystem
 
         public void showPublisherID()
         {
-            SqlCommand cmd = new SqlCommand("select publisherID from publisher", con);
+            SqlCommand cmd = new SqlCommand("select publisherID from publisher ORDER BY publisherID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -331,6 +336,43 @@ namespace libraryManagementSystem
                 throw new Exception("Publisher Name Already Exist");
             }
 
+        }
+
+        private void previousPage_Click(object sender, EventArgs e)
+        {
+            if (offsetVlaue > 0)
+            {
+                offsetVlaue = offsetVlaue - 6;
+
+                //refereshing page
+                loadPublishers();
+            }
+        }
+
+        private void nextPage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select publisherID from publisher", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                string tableLength = dt.Rows.Count.ToString();
+                int length = int.Parse(tableLength);
+
+                if (offsetVlaue < length - 6)
+                {
+                    offsetVlaue = offsetVlaue + 6;
+
+                    //refereshing page
+                    loadPublishers();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Pagination Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

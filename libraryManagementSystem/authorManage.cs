@@ -15,6 +15,7 @@ namespace libraryManagementSystem
             InitializeComponent();
         }
 
+        int offsetVlaue = 0;
         private void authorManage_Load(object sender, EventArgs e)
         {
             loadAuthors();
@@ -51,7 +52,9 @@ namespace libraryManagementSystem
 
         public void showAuthorName()
         {
-            SqlCommand cmd = new SqlCommand("select fullname from auther", con);
+            SqlCommand cmd = new SqlCommand("select fullname from auther ORDER BY authorID OFFSET @offsetValye ROWS FETCH NEXT 7 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -83,7 +86,9 @@ namespace libraryManagementSystem
 
         public void showAuthorID()
         {
-            SqlCommand cmd = new SqlCommand("select authorID from auther", con);
+            SqlCommand cmd = new SqlCommand("select authorID from auther ORDER BY authorID OFFSET @offsetValye ROWS FETCH NEXT 7 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -330,6 +335,42 @@ namespace libraryManagementSystem
 
         }
 
-        
+        private void previousPage_Click(object sender, EventArgs e)
+        {
+            if (offsetVlaue > 0)
+            {
+                offsetVlaue = offsetVlaue - 7;
+
+                //refereshing page
+                loadAuthors();
+            }
+        }
+
+        private void nextPage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select fullname from auther", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                string tableLength = dt.Rows.Count.ToString();
+                int length = int.Parse(tableLength);
+
+                if (offsetVlaue < length - 7)
+                {
+                    offsetVlaue = offsetVlaue + 7;
+
+                    //refereshing page
+                    //refereshing page
+                    loadAuthors();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Pagination Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

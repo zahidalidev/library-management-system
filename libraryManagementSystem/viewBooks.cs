@@ -472,22 +472,28 @@ namespace libraryManagementSystem
 
         private void nextPage_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select bookID from book", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            string tableLength = dt.Rows.Count.ToString();
-            int length = int.Parse(tableLength);
-
-            if(offsetVlaue < length - 3)
+            try
             {
-                offsetVlaue = offsetVlaue + 3;
+                SqlCommand cmd = new SqlCommand("select bookID from book", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-                //refereshing page
-                reloadWithAllValues();
+                string tableLength = dt.Rows.Count.ToString();
+                int length = int.Parse(tableLength);
+
+                if(offsetVlaue < length - 3)
+                {
+                    offsetVlaue = offsetVlaue + 3;
+
+                    //refereshing page
+                    reloadWithAllValues();
+                }
             }
-
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Pagination Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
