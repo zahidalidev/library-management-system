@@ -62,6 +62,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.userIDI = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,19 +98,20 @@
             this.updateProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateProfileButton.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateProfileButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.updateProfileButton.Location = new System.Drawing.Point(529, 955);
+            this.updateProfileButton.Location = new System.Drawing.Point(667, 918);
             this.updateProfileButton.Name = "updateProfileButton";
             this.updateProfileButton.Size = new System.Drawing.Size(159, 50);
             this.updateProfileButton.TabIndex = 46;
             this.updateProfileButton.Text = "Update";
             this.updateProfileButton.UseVisualStyleBackColor = false;
+            this.updateProfileButton.Click += new System.EventHandler(this.updateProfileButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(383, 329);
+            this.label2.Location = new System.Drawing.Point(383, 333);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 33);
             this.label2.TabIndex = 45;
@@ -118,7 +122,7 @@
             this.lableStreet.AutoSize = true;
             this.lableStreet.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
             this.lableStreet.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lableStreet.Location = new System.Drawing.Point(63, 786);
+            this.lableStreet.Location = new System.Drawing.Point(64, 754);
             this.lableStreet.Name = "lableStreet";
             this.lableStreet.Size = new System.Drawing.Size(181, 33);
             this.lableStreet.TabIndex = 44;
@@ -139,7 +143,7 @@
             this.textBox4.BackColor = System.Drawing.SystemColors.Control;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(482, 683);
+            this.textBox4.Location = new System.Drawing.Point(482, 674);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(329, 27);
             this.textBox4.TabIndex = 42;
@@ -149,7 +153,7 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.Control;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(70, 683);
+            this.textBox2.Location = new System.Drawing.Point(70, 674);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(332, 27);
             this.textBox2.TabIndex = 38;
@@ -178,8 +182,9 @@
             // 
             this.upCnic.BackColor = System.Drawing.SystemColors.Control;
             this.upCnic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.upCnic.Enabled = false;
             this.upCnic.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upCnic.Location = new System.Drawing.Point(73, 967);
+            this.upCnic.Location = new System.Drawing.Point(74, 935);
             this.upCnic.Name = "upCnic";
             this.upCnic.Size = new System.Drawing.Size(329, 27);
             this.upCnic.TabIndex = 39;
@@ -189,7 +194,7 @@
             this.upPassword.BackColor = System.Drawing.SystemColors.Control;
             this.upPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.upPassword.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upPassword.Location = new System.Drawing.Point(389, 371);
+            this.upPassword.Location = new System.Drawing.Point(389, 375);
             this.upPassword.Name = "upPassword";
             this.upPassword.Size = new System.Drawing.Size(254, 27);
             this.upPassword.TabIndex = 37;
@@ -199,7 +204,7 @@
             this.upStreet.BackColor = System.Drawing.SystemColors.Control;
             this.upStreet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.upStreet.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upStreet.Location = new System.Drawing.Point(69, 834);
+            this.upStreet.Location = new System.Drawing.Point(70, 802);
             this.upStreet.Name = "upStreet";
             this.upStreet.Size = new System.Drawing.Size(757, 27);
             this.upStreet.TabIndex = 36;
@@ -207,7 +212,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel5.Location = new System.Drawing.Point(389, 403);
+            this.panel5.Location = new System.Drawing.Point(389, 407);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(242, 1);
             this.panel5.TabIndex = 35;
@@ -223,7 +228,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel7.Location = new System.Drawing.Point(482, 715);
+            this.panel7.Location = new System.Drawing.Point(482, 706);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(350, 1);
             this.panel7.TabIndex = 32;
@@ -231,7 +236,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel3.Location = new System.Drawing.Point(69, 866);
+            this.panel3.Location = new System.Drawing.Point(70, 834);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(757, 1);
             this.panel3.TabIndex = 34;
@@ -239,7 +244,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.Location = new System.Drawing.Point(70, 715);
+            this.panel6.Location = new System.Drawing.Point(70, 706);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(358, 1);
             this.panel6.TabIndex = 28;
@@ -247,7 +252,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel8.Location = new System.Drawing.Point(73, 999);
+            this.panel8.Location = new System.Drawing.Point(74, 967);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(350, 1);
             this.panel8.TabIndex = 31;
@@ -276,7 +281,7 @@
             this.upCity.AutoSize = true;
             this.upCity.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
             this.upCity.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.upCity.Location = new System.Drawing.Point(476, 636);
+            this.upCity.Location = new System.Drawing.Point(476, 627);
             this.upCity.Name = "upCity";
             this.upCity.Size = new System.Drawing.Size(55, 33);
             this.upCity.TabIndex = 24;
@@ -295,7 +300,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label8.Location = new System.Drawing.Point(67, 920);
+            this.label8.Location = new System.Drawing.Point(68, 888);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 33);
             this.label8.TabIndex = 23;
@@ -306,7 +311,7 @@
             this.upMobile.AutoSize = true;
             this.upMobile.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
             this.upMobile.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.upMobile.Location = new System.Drawing.Point(64, 636);
+            this.upMobile.Location = new System.Drawing.Point(64, 627);
             this.upMobile.Name = "upMobile";
             this.upMobile.Size = new System.Drawing.Size(174, 33);
             this.upMobile.TabIndex = 22;
@@ -347,6 +352,7 @@
             this.aAdd.TabIndex = 81;
             this.aAdd.Text = "Get Details";
             this.aAdd.UseVisualStyleBackColor = false;
+            this.aAdd.Click += new System.EventHandler(this.aAdd_Click);
             // 
             // previousPage
             // 
@@ -355,12 +361,13 @@
             this.previousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previousPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.previousPage.ForeColor = System.Drawing.SystemColors.Control;
-            this.previousPage.Location = new System.Drawing.Point(997, 955);
+            this.previousPage.Location = new System.Drawing.Point(998, 923);
             this.previousPage.Name = "previousPage";
             this.previousPage.Size = new System.Drawing.Size(91, 50);
             this.previousPage.TabIndex = 84;
             this.previousPage.Text = "<<";
             this.previousPage.UseVisualStyleBackColor = false;
+            this.previousPage.Click += new System.EventHandler(this.previousPage_Click);
             // 
             // nextPage
             // 
@@ -369,12 +376,13 @@
             this.nextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nextPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextPage.ForeColor = System.Drawing.SystemColors.Control;
-            this.nextPage.Location = new System.Drawing.Point(1215, 955);
+            this.nextPage.Location = new System.Drawing.Point(1216, 923);
             this.nextPage.Name = "nextPage";
             this.nextPage.Size = new System.Drawing.Size(91, 50);
             this.nextPage.TabIndex = 83;
             this.nextPage.Text = ">>";
             this.nextPage.UseVisualStyleBackColor = false;
+            this.nextPage.Click += new System.EventHandler(this.nextPage_Click);
             // 
             // label4
             // 
@@ -413,6 +421,36 @@
             this.label7.TabIndex = 108;
             this.label7.Text = "Book Title";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 13F);
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label10.Location = new System.Drawing.Point(446, 888);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 33);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "ID";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel10.Location = new System.Drawing.Point(452, 967);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(182, 1);
+            this.panel10.TabIndex = 31;
+            // 
+            // userIDI
+            // 
+            this.userIDI.BackColor = System.Drawing.SystemColors.Control;
+            this.userIDI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userIDI.Enabled = false;
+            this.userIDI.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIDI.Location = new System.Drawing.Point(452, 935);
+            this.userIDI.Name = "userIDI";
+            this.userIDI.Size = new System.Drawing.Size(161, 27);
+            this.userIDI.TabIndex = 39;
+            // 
             // userProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -431,6 +469,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.upFullName);
             this.Controls.Add(this.upEmail);
+            this.Controls.Add(this.userIDI);
             this.Controls.Add(this.upCnic);
             this.Controls.Add(this.upPassword);
             this.Controls.Add(this.upStreet);
@@ -438,11 +477,13 @@
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.upCity);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.upMobile);
@@ -451,6 +492,7 @@
             this.Controls.Add(this.label5);
             this.Name = "userProfile";
             this.Size = new System.Drawing.Size(1500, 2095);
+            this.Load += new System.EventHandler(this.userProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -493,5 +535,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox userIDI;
     }
 }
