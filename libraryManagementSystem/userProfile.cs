@@ -20,6 +20,7 @@ namespace libraryManagementSystem
             InitializeComponent();
         }
 
+        string memberID2 = "";
         int offsetVlaue = 0;
         private void userProfile_Load(object sender, EventArgs e)
         {
@@ -60,10 +61,9 @@ namespace libraryManagementSystem
         //showing member ID
         public void showBookID()
         {
-            string memberID = userIDI.Text.Trim();
             SqlCommand cmd = new SqlCommand("select bookID from memberbookissue where memberID = @memberID ORDER BY bookID OFFSET @offsetVlaue ROWS FETCH NEXT 6 ROWS ONLY", con);
             cmd.Parameters.AddWithValue("@offsetVlaue", offsetVlaue);
-            cmd.Parameters.AddWithValue("@memberID", memberID);
+            cmd.Parameters.AddWithValue("@memberID", memberID2);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -95,10 +95,9 @@ namespace libraryManagementSystem
         //showing book ID
         public void showBookName()
         {
-            string memberID = userIDI.Text.Trim();
             SqlCommand cmd = new SqlCommand("select b.name from memberbookissue mb JOIN book b on b.bookID = mb.bookID where memberID = @memberID ORDER BY mb.bookID OFFSET @offsetVlaue ROWS FETCH NEXT 6 ROWS ONLY", con);
             cmd.Parameters.AddWithValue("@offsetVlaue", offsetVlaue);
-            cmd.Parameters.AddWithValue("@memberID", memberID);
+            cmd.Parameters.AddWithValue("@memberID", memberID2);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -189,7 +188,7 @@ namespace libraryManagementSystem
                     //close connection
                     con.Close();
 
-                    MessageBox.Show("Sign Up Successfull", "Hi " + fullname,
+                    MessageBox.Show("Updated Successfull", "Successfull",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -257,6 +256,7 @@ namespace libraryManagementSystem
                     textBox4.Text = dt.Rows[0][4].ToString();
                     upState.Text = dt.Rows[0][5].ToString();
                     userIDI.Text = dt.Rows[0][6].ToString();
+                    memberID2 = dt.Rows[0][6].ToString();
 
                     loadMembersBooks();
                 }
@@ -290,9 +290,8 @@ namespace libraryManagementSystem
         {
             try
             {
-                string memberID = userIDI.Text.Trim();
                 SqlCommand cmd = new SqlCommand("select bookID from memberbookissue where memberID = @memberID", con);
-                cmd.Parameters.AddWithValue("@memberID", memberID);
+                cmd.Parameters.AddWithValue("@memberID", memberID2);
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
