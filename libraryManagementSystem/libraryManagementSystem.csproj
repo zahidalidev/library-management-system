@@ -121,6 +121,12 @@
     <Compile Include="signup.Designer.cs">
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
+    <Compile Include="userProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userProfile.Designer.cs">
+      <DependentUpon>userProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewBooks.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userProfile.resx">
+      <DependentUpon>userProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewBooks.resx">
       <DependentUpon>viewBooks.cs</DependentUpon>

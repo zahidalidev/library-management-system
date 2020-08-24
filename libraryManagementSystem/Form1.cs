@@ -20,6 +20,7 @@ namespace libraryManagementSystem
         {
             sideHome.Height = button8.Height;
             sideHome.Top = button8.Top;
+            viewBooks1.Show();
             viewBooks1.BringToFront();
 
             //label of name
@@ -65,18 +66,21 @@ namespace libraryManagementSystem
 
             viewBooks1.SendToBack();
             signup1.SendToBack();
+            userProfile1.Hide();
             signup1.Hide();
             manageUser1.SendToBack();
             authorManage1.SendToBack();
             publisherManage1.SendToBack();
             books1.SendToBack();
             bookIssue1.SendToBack();
+            userProfile1.SendToBack();
         }
 
         private void button8_Click_1(object sender, EventArgs e)
         {
             sideHome.Height = button8.Height;
             sideHome.Top = button8.Top;
+            viewBooks1.Show();
             viewBooks1.BringToFront();
         }
 
@@ -121,6 +125,16 @@ namespace libraryManagementSystem
             sideHome.Height = button14.Height;
             sideHome.Top = button14.Top;
             bookIssue1.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sideHome.Height = button1.Height;
+            sideHome.Top = button1.Top;
+            viewBooks1.Hide();
+            viewBooks1.SendToBack();
+            userProfile1.Show();
+            userProfile1.BringToFront();
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -193,6 +207,7 @@ namespace libraryManagementSystem
                     viewBooks1.BringToFront();
 
                     //label of name
+                    button1.Enabled = false;
                     button1.Visible = true;
                     button1.Text = "Hi Admin";
                     //login
@@ -243,6 +258,7 @@ namespace libraryManagementSystem
                         viewBooks1.BringToFront();
 
                         //label of name
+                        button1.Enabled = true;
                         button1.Visible = true;
                         button1.Text = dtEmail;
                         //login
@@ -276,5 +292,7 @@ namespace libraryManagementSystem
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }

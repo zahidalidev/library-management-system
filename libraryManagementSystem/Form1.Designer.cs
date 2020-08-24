@@ -48,16 +48,17 @@
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.userProfile1 = new libraryManagementSystem.userProfile();
+            this.signup1 = new libraryManagementSystem.signup();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.signup1 = new libraryManagementSystem.signup();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
             this.manageUser1 = new libraryManagementSystem.manageUser();
             this.bookIssue1 = new libraryManagementSystem.bookIssue();
             this.publisherManage1 = new libraryManagementSystem.publisherManage();
@@ -107,6 +108,7 @@
             this.button1.TabIndex = 21;
             this.button1.Text = "Sign Up";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button16
             // 
@@ -298,6 +300,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.userProfile1);
             this.panel3.Controls.Add(this.signup1);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.label5);
@@ -313,20 +316,19 @@
             this.panel3.TabIndex = 20;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
-            // loginButton
+            // userProfile1
             // 
-            this.loginButton.BackColor = System.Drawing.Color.Crimson;
-            this.loginButton.FlatAppearance.BorderSize = 0;
-            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginButton.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.loginButton.Location = new System.Drawing.Point(650, 708);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(159, 50);
-            this.loginButton.TabIndex = 20;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.userProfile1.Location = new System.Drawing.Point(1, -1);
+            this.userProfile1.Name = "userProfile1";
+            this.userProfile1.Size = new System.Drawing.Size(1612, 2095);
+            this.userProfile1.TabIndex = 22;
+            // 
+            // signup1
+            // 
+            this.signup1.Location = new System.Drawing.Point(1, -22);
+            this.signup1.Name = "signup1";
+            this.signup1.Size = new System.Drawing.Size(1553, 2006);
+            this.signup1.TabIndex = 21;
             // 
             // panel7
             // 
@@ -350,13 +352,6 @@
             this.label3.Size = new System.Drawing.Size(592, 75);
             this.label3.TabIndex = 1;
             this.label3.Text = "Login to Your Account";
-            // 
-            // signup1
-            // 
-            this.signup1.Location = new System.Drawing.Point(1, -22);
-            this.signup1.Name = "signup1";
-            this.signup1.Size = new System.Drawing.Size(1553, 2006);
-            this.signup1.TabIndex = 21;
             // 
             // label5
             // 
@@ -415,6 +410,21 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(508, 27);
             this.textBox1.TabIndex = 17;
+            // 
+            // loginButton
+            // 
+            this.loginButton.BackColor = System.Drawing.Color.Crimson;
+            this.loginButton.FlatAppearance.BorderSize = 0;
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.loginButton.Location = new System.Drawing.Point(650, 708);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(159, 50);
+            this.loginButton.TabIndex = 20;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // manageUser1
             // 
@@ -533,6 +543,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private signup signup1;
+        private userProfile userProfile1;
     }
 }
 
