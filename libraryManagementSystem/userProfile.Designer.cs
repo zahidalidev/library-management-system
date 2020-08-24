@@ -65,6 +65,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.userIDI = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -361,7 +362,7 @@
             this.previousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previousPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.previousPage.ForeColor = System.Drawing.SystemColors.Control;
-            this.previousPage.Location = new System.Drawing.Point(998, 923);
+            this.previousPage.Location = new System.Drawing.Point(1000, 779);
             this.previousPage.Name = "previousPage";
             this.previousPage.Size = new System.Drawing.Size(91, 50);
             this.previousPage.TabIndex = 84;
@@ -376,7 +377,7 @@
             this.nextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nextPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextPage.ForeColor = System.Drawing.SystemColors.Control;
-            this.nextPage.Location = new System.Drawing.Point(1216, 923);
+            this.nextPage.Location = new System.Drawing.Point(1218, 779);
             this.nextPage.Name = "nextPage";
             this.nextPage.Size = new System.Drawing.Size(91, 50);
             this.nextPage.TabIndex = 83;
@@ -451,10 +452,27 @@
             this.userIDI.Size = new System.Drawing.Size(161, 27);
             this.userIDI.TabIndex = 39;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Maroon;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(667, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 50);
+            this.button1.TabIndex = 110;
+            this.button1.Text = "Clear Feilds";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // userProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.previousPage);
@@ -538,5 +556,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox userIDI;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -22,6 +22,8 @@ namespace libraryManagementSystem
 
         string memberID2 = "";
         int offsetVlaue = 0;
+        string email2 = "";
+        string password2 = "";
         private void userProfile_Load(object sender, EventArgs e)
         {
             
@@ -231,8 +233,22 @@ namespace libraryManagementSystem
 
             try
             {
-                string email = upEmail.Text.Trim();
-                string password = upPassword.Text.Trim();
+                string email;
+                string password;
+
+                if (email2 == "" && password2 == "")
+                {
+                    email = upEmail.Text.Trim();
+                    password = upPassword.Text.Trim();
+
+                    email2 = email;
+                    password2 = password;
+                }
+                else
+                {
+                    email = email2;
+                    password = password2;
+                }
 
                 //inserting the member address of above table
                 SqlCommand cmd3 = new SqlCommand("select fullname, mobileNumber, IDCardNumber, streetAddress, city, state, m.memberID from member m JOIN memberAddress mA on m.memberID = mA.memberID where email = @email and password = @password", con);
@@ -283,6 +299,7 @@ namespace libraryManagementSystem
                 Controls.Clear();
                 InitializeComponent();
                 loadMembersBooks();
+                aAdd_Click(sender, e);
             }
         }
 
@@ -308,6 +325,7 @@ namespace libraryManagementSystem
                     Controls.Clear();
                     InitializeComponent();
                     loadMembersBooks();
+                    aAdd_Click(sender, e);
                 }
             }
             catch (Exception error)
@@ -316,7 +334,21 @@ namespace libraryManagementSystem
             }
         }
 
+        //clear feilds
+        private void button1_Click(object sender, EventArgs e)
+        {
+            upEmail.Enabled = true;
 
-
+            upFullName.Text = "";
+            textBox2.Text = "";
+            upCnic.Text = "";
+            upStreet.Text = "";
+            textBox4.Text = "";
+            upState.Text = "";
+            userIDI.Text = "";
+            memberID2 = "";
+            upEmail.Text = "";
+            upPassword.Text = "";
+        }
     }
 }
