@@ -4,6 +4,7 @@
 CREATE DATABASE DBLibrary;
 
 USE DBLibrary
+
 GO
 EXEC sp_changedbowner 'sa'
 
@@ -12,8 +13,8 @@ EXEC sp_changedbowner 'sa'
 -- ----------------------------------------------------------------------------
 CREATE TABLE admin (
   adminID INT NOT NULL IDENTITY,
-  email VARCHAR(45) NOT NULL,
-  password VARCHAR(45) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
   PRIMARY KEY (adminID)
 )
 
@@ -22,7 +23,7 @@ CREATE TABLE admin (
 -- ----------------------------------------------------------------------------
 CREATE TABLE auther (
   authorID INT NOT NULL IDENTITY,
-  fullname VARCHAR(45) NOT NULL,
+  fullname VARCHAR(255) NOT NULL UNIQUE,
   PRIMARY KEY (authorID)
 )
 
@@ -31,7 +32,7 @@ CREATE TABLE auther (
 -- ----------------------------------------------------------------------------
 CREATE TABLE publisher (
   publisherID INT NOT NULL IDENTITY,
-  fullname VARCHAR(45) NOT NULL,
+  fullname VARCHAR(255) NOT NULL UNIQUE,
   PRIMARY KEY (publisherID)
 )
 
@@ -41,14 +42,14 @@ CREATE TABLE publisher (
 -- ----------------------------------------------------------------------------
 CREATE TABLE book (
   bookID INT NOT NULL IDENTITY,
-  name VARCHAR(45) NOT NULL,
-  description VARCHAR(45) NOT NULL,
-  genre VARCHAR(45) NOT NULL,
-  edition VARCHAR(45) NOT NULL,
-  bookImage VARCHAR(45) NOT NULL,
-  price VARCHAR(45) NOT NULL,
-  totalStock VARCHAR(45) NOT NULL,
-  currentStock VARCHAR(45) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  description VARCHAR(555) NOT NULL,
+  genre VARCHAR(55) NOT NULL,
+  edition VARCHAR(55) NOT NULL,
+  bookImage VARCHAR(555) NOT NULL,
+  price VARCHAR(155) NOT NULL,
+  totalStock VARCHAR(155) NOT NULL,
+  currentStock VARCHAR(155) NOT NULL,
   authorID INT NOT NULL foreign key references auther(authorID),
   publisherID INT NOT NULL foreign key references publisher(publisherID),
   PRIMARY KEY (bookID),
@@ -60,11 +61,11 @@ CREATE TABLE book (
 -- ----------------------------------------------------------------------------
 CREATE TABLE member (
   memberID INT NOT NULL IDENTITY,
-  password VARCHAR(45) NOT NULL,
-  fullname VARCHAR(45) NOT NULL,
-  mobileNumber VARCHAR(45) NOT NULL,
-  email VARCHAR(45) NOT NULL,
-  IDCardNumber VARCHAR(45) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  fullname VARCHAR(255) NOT NULL,
+  mobileNumber VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  IDCardNumber VARCHAR(255) NOT NULL UNIQUE,
   PRIMARY KEY (memberID),
 )
 
@@ -73,9 +74,9 @@ CREATE TABLE member (
 -- ----------------------------------------------------------------------------
 CREATE TABLE memberAddress (
   memberID INT NOT NULL,
-  streetAddress VARCHAR(45) NOT NULL,
-  city VARCHAR(45) NOT NULL,
-  state VARCHAR(45) NOT NULL,
+  streetAddress VARCHAR(255) NOT NULL,
+  city VARCHAR(155) NOT NULL,
+  state VARCHAR(155) NOT NULL,
   PRIMARY KEY (memberID),
   FOREIGN KEY (memberID) REFERENCES member(memberID) ON DELETE CASCADE
 )

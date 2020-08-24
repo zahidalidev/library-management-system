@@ -499,5 +499,20 @@ namespace libraryManagementSystem
         {
 
         }
+
+        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        //referesh page
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Controls.Clear();
+            InitializeComponent();
+
+            books_Load(sender, e);
+        }
     }
 }

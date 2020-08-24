@@ -74,6 +74,7 @@
             this.bStock1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.updateBookOriginal = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBLibraryDataSet)).BeginInit();
@@ -503,10 +504,27 @@
             this.updateBookOriginal.UseVisualStyleBackColor = false;
             this.updateBookOriginal.Click += new System.EventHandler(this.updateBookOriginal_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Maroon;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Franklin Gothic Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Location = new System.Drawing.Point(1365, 144);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(128, 40);
+            this.button4.TabIndex = 111;
+            this.button4.Text = "Referesh";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
             // books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.updateBookOriginal);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
@@ -604,5 +622,6 @@
         private System.Windows.Forms.TextBox bStock1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button updateBookOriginal;
+        private System.Windows.Forms.Button button4;
     }
 }
