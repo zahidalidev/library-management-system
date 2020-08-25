@@ -12,13 +12,13 @@
 
 ## Preview
 
-[!(https://i.ibb.co/X2mKtYy/1.png)](https://i.ibb.co/X2mKtYy/1.png)
+[![](https://i.ibb.co/X2mKtYy/1.png)](https://i.ibb.co/X2mKtYy/1.png)
 
-[!(https://i.ibb.co/mTZgGyS/4.png)](https://i.ibb.co/mTZgGyS/4.png)
+[![](https://i.ibb.co/mTZgGyS/4.png)](https://i.ibb.co/mTZgGyS/4.png)
 
-[!(https://i.ibb.co/KwFR9Tb/2.png)](https://i.ibb.co/KwFR9Tb/2.png)
+[![](https://i.ibb.co/KwFR9Tb/2.png)](https://i.ibb.co/KwFR9Tb/2.png)
 
-[!(https://i.ibb.co/Lz19snv/3.png)](https://i.ibb.co/Lz19snv/3.png)
+[![](https://i.ibb.co/Lz19snv/3.png)](https://i.ibb.co/Lz19snv/3.png)
 
 
 
@@ -37,7 +37,7 @@ For now, you can install it manually following these simple steps:
 
 - Change Connection Strings In application.
 
-- Run Application in Visual Studio and Use.
+- Run Application in Visual Studio and UsZe.
 
 
 
