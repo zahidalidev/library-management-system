@@ -88,6 +88,10 @@ namespace libraryManagementSystem
         {
             sideHome.Height = button10.Height;
             sideHome.Top = button10.Top;
+
+            viewBooks1.SendToBack();
+            viewBooks1.Hide();
+
             signup1.Show();
             signup1.BringToFront();
         }
