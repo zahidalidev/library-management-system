@@ -9,12 +9,13 @@
 
 ## UML
 
+[![](https://i.ibb.co/PDXdVfn/UML.png)](https://i.ibb.co/PDXdVfn/UML.png)
 
 ## Preview
 
 [![](https://i.ibb.co/X2mKtYy/1.png)](https://i.ibb.co/X2mKtYy/1.png)
 
-[![](https://i.ibb.co/mTZgGyS/4.png)](https://i.ibb.co/mTZgGyS/4.png)
+[![](https://i.ibb.co/7GqdH3q/4.png)](https://i.ibb.co/7GqdH3q/4.png)
 
 [![](https://i.ibb.co/KwFR9Tb/2.png)](https://i.ibb.co/KwFR9Tb/2.png)
 

@@ -10,7 +10,6 @@ CREATE DATABASE DBLibrary;
 
 USE DBLibrary
 
-
 -- ----------------------------------------------------------------------------
 -- Table admin
 -- ----------------------------------------------------------------------------
@@ -90,6 +89,9 @@ CREATE TABLE memberAddress (
 -- ----------------------------------------------------------------------------
 CREATE TABLE memberbookissue (
   memberID INT NOT NULL foreign key references member(memberID),
-  bookID INT NOT NULL foreign key references book(bookID)
+  bookID INT NOT NULL foreign key references book(bookID),
+  issueData Date NOT NULL,
+  dueDate Date NOT NULL
 )
+
 

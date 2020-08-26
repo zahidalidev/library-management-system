@@ -40,6 +40,9 @@ namespace libraryManagementSystem
                 //showing Author Name
                 showBookID();
 
+                //show due Date
+                showDueDate();
+
                 //closing connection
                 con.Close();
             }
@@ -47,6 +50,38 @@ namespace libraryManagementSystem
             {
                 MessageBox.Show(error.Message, "Loading Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //showing Due Date
+        public void showDueDate()
+        {
+            SqlCommand cmd = new SqlCommand("select dueDate from memberbookissue ORDER BY memberID OFFSET @offsetValye ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetValye", offsetVlaue);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            //showing image from colunm bookImage
+            int i = 0;
+            foreach (DataRow dtRow in dt.Rows)
+            {
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    var field1 = dtRow[dc].ToString();
+                    Label label = new Label();
+
+                    label.Location = new System.Drawing.Point(885, 242 + 40 * i);
+                    label.Name = "memberBookDueDate" + i.ToString();
+                    label.ForeColor = Color.Black;
+                    label.BackColor = System.Drawing.Color.Transparent;
+                    label.Size = new System.Drawing.Size(80, 20);
+                    label.Text = field1;
+                    label.Font = new Font("Franklin Gothic Medium", 10);
+                    this.Controls.Add(label);
+                    i++;
+                }
             }
         }
 
@@ -69,7 +104,7 @@ namespace libraryManagementSystem
                     var field1 = dtRow[dc].ToString();
                     Label label = new Label();
 
-                    label.Location = new System.Drawing.Point(655, 242 + 40 * i);
+                    label.Location = new System.Drawing.Point(620, 242 + 40 * i);
                     label.Name = "memebrid" + i.ToString();
                     label.ForeColor = Color.Black;
                     label.BackColor = System.Drawing.Color.Transparent;
@@ -101,7 +136,7 @@ namespace libraryManagementSystem
                     var field1 = dtRow[dc].ToString();
                     Label label = new Label();
 
-                    label.Location = new System.Drawing.Point(820, 242 + 40 * i);
+                    label.Location = new System.Drawing.Point(765, 242 + 40 * i);
                     label.Name = "bookid" + i.ToString();
                     label.ForeColor = Color.Black;
                     label.BackColor = System.Drawing.Color.Transparent;
@@ -178,6 +213,7 @@ namespace libraryManagementSystem
                 //getting values from text boxes
                 string memberid = memID.Text.Trim();
                 string bookid = bookID.Text.Trim();
+                DateTime dueDate = dateTimePicker1.Value;
 
                 //checking member with the given id exist
                 checkMemberID(memberid);
@@ -209,9 +245,11 @@ namespace libraryManagementSystem
 
 
                 //insertin values in memberbookIssue table in the database
-                SqlCommand cmd = new SqlCommand("insert into memberbookissue values(@memberid, @bookid)", con);
+                SqlCommand cmd = new SqlCommand("insert into memberbookissue values(@memberid, @bookid, getdate(), @dueDate)", con);
                 cmd.Parameters.AddWithValue("@memberid", memberid);
                 cmd.Parameters.AddWithValue("@bookid", bookid);
+                cmd.Parameters.AddWithValue("@dueDate", dueDate);
+
                 cmd.ExecuteNonQuery();
 
                 //commit transaction
@@ -402,6 +440,11 @@ namespace libraryManagementSystem
             {
                 MessageBox.Show(error.Message, "Pagination Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void BookTitle_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

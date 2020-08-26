@@ -66,6 +66,8 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.userIDI = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -347,7 +349,7 @@
             this.aAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aAdd.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aAdd.ForeColor = System.Drawing.SystemColors.Control;
-            this.aAdd.Location = new System.Drawing.Point(667, 359);
+            this.aAdd.Location = new System.Drawing.Point(667, 363);
             this.aAdd.Name = "aAdd";
             this.aAdd.Size = new System.Drawing.Size(159, 50);
             this.aAdd.TabIndex = 81;
@@ -362,7 +364,7 @@
             this.previousPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previousPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.previousPage.ForeColor = System.Drawing.SystemColors.Control;
-            this.previousPage.Location = new System.Drawing.Point(1000, 779);
+            this.previousPage.Location = new System.Drawing.Point(1007, 880);
             this.previousPage.Name = "previousPage";
             this.previousPage.Size = new System.Drawing.Size(91, 50);
             this.previousPage.TabIndex = 84;
@@ -377,7 +379,7 @@
             this.nextPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nextPage.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextPage.ForeColor = System.Drawing.SystemColors.Control;
-            this.nextPage.Location = new System.Drawing.Point(1218, 779);
+            this.nextPage.Location = new System.Drawing.Point(1225, 880);
             this.nextPage.Name = "nextPage";
             this.nextPage.Size = new System.Drawing.Size(91, 50);
             this.nextPage.TabIndex = 83;
@@ -403,7 +405,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium", 15F);
             this.label6.ForeColor = System.Drawing.Color.DarkRed;
-            this.label6.Location = new System.Drawing.Point(968, 301);
+            this.label6.Location = new System.Drawing.Point(888, 402);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 38);
             this.label6.TabIndex = 109;
@@ -416,7 +418,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 15F);
             this.label7.ForeColor = System.Drawing.Color.DarkRed;
-            this.label7.Location = new System.Drawing.Point(1221, 301);
+            this.label7.Location = new System.Drawing.Point(1073, 402);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(146, 38);
             this.label7.TabIndex = 108;
@@ -460,7 +462,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 11F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(667, 297);
+            this.button1.Location = new System.Drawing.Point(667, 301);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 50);
             this.button1.TabIndex = 110;
@@ -468,12 +470,40 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.Font = new System.Drawing.Font("Franklin Gothic Medium", 15F);
+            this.label11.ForeColor = System.Drawing.Color.DarkRed;
+            this.label11.Location = new System.Drawing.Point(1283, 405);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(139, 38);
+            this.label11.TabIndex = 108;
+            this.label11.Text = "Due Date";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label12.Font = new System.Drawing.Font("Franklin Gothic Medium", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkRed;
+            this.label12.Location = new System.Drawing.Point(1014, 268);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(273, 49);
+            this.label12.TabIndex = 108;
+            this.label12.Text = "Issued Books";
+            // 
             // userProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.previousPage);
             this.Controls.Add(this.nextPage);
@@ -557,5 +587,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox userIDI;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -50,6 +50,9 @@ namespace libraryManagementSystem
                 //showing Author Name
                 showBookName();
 
+                //show Due Date
+                showDueDate();
+
                 //closing connection
                 con.Close();
             }
@@ -57,6 +60,41 @@ namespace libraryManagementSystem
             {
                 MessageBox.Show(error.Message, "Loading Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //showing Due Date
+        public void showDueDate()
+        {
+            SqlCommand cmd = new SqlCommand("select dueDate from memberbookissue where memberID = @memberID ORDER BY bookID OFFSET @offsetVlaue ROWS FETCH NEXT 6 ROWS ONLY", con);
+            cmd.Parameters.AddWithValue("@offsetVlaue", offsetVlaue);
+            cmd.Parameters.AddWithValue("@memberID", memberID2);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            //showing image from colunm bookImage
+            int i = 0;
+            foreach (DataRow dtRow in dt.Rows)
+            {
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    var field1 = dtRow[dc].ToString();
+                    Label label = new Label();
+
+                    label.BringToFront();
+                    label.Location = new System.Drawing.Point(820, 313 + 40 * i);
+                    label.BringToFront();
+                    label.Name = "memberDueDate" + i.ToString();
+                    label.ForeColor = Color.Black;
+                    label.BackColor = System.Drawing.Color.Transparent;
+                    label.Size = new System.Drawing.Size(200, 20);
+                    label.Text = field1;
+                    label.Font = new Font("Franklin Gothic Medium", 10);
+                    this.Controls.Add(label);
+                    i++;
+                }
             }
         }
 
@@ -81,7 +119,7 @@ namespace libraryManagementSystem
                     Label label = new Label();
 
                     label.BringToFront();
-                    label.Location = new System.Drawing.Point(660, 242 + 40 * i);
+                    label.Location = new System.Drawing.Point(615, 313 + 40 * i);
                     label.Name = "memebbookrid" + i.ToString();
                     label.ForeColor = Color.Black;
                     label.BackColor = System.Drawing.Color.Transparent;
@@ -115,7 +153,7 @@ namespace libraryManagementSystem
                     Label label = new Label();
 
                     label.BringToFront();
-                    label.Location = new System.Drawing.Point(840, 242 + 40 * i);
+                    label.Location = new System.Drawing.Point(720, 313 + 40 * i);
                     label.Name = "bookid" + i.ToString();
                     label.ForeColor = Color.Black;
                     label.BackColor = System.Drawing.Color.Transparent;
