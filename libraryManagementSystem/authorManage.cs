@@ -69,12 +69,11 @@ namespace libraryManagementSystem
                     Label label = new Label();
 
                     label.Location = new System.Drawing.Point(775, 242 + 40 * i);
-                    //label.TabIndex = 0 + i;
+                    
                     label.Name = "AuthorName" + i.ToString();
-                    //label.ForeColor = SystemColors.WindowFrame;
-                    label.ForeColor = Color.Black;
+                                        label.ForeColor = Color.Black;
                     label.BackColor = System.Drawing.Color.Transparent;
-                    //label.BorderStyle = BorderStyle.Fixed3D;
+                    
                     label.Size = new System.Drawing.Size(200, 20);
                     label.Text = field1;
                     label.Font = new Font("Franklin Gothic Medium", 10);
